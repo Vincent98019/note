@@ -1,0 +1,161 @@
+{
+  "main": {
+    "id": "adc89359b95892ba",
+    "type": "split",
+    "children": [
+      {
+        "id": "cee541ee3f99448e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8409ae6ebaccf0e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/并发编程/01.进程与线程.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a0f8c8d912e9ace3",
+    "type": "split",
+    "children": [
+      {
+        "id": "5c73513cb8790fd7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "573d364e499ca4ca",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4c01df090e2d888d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c5380db31512abe8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "77b84085a6de7ba3",
+    "type": "split",
+    "children": [
+      {
+        "id": "30883cce94bade21",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e447f141268fb17",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Java/并发编程/01.进程与线程.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "97bfe891422e1012",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Java/并发编程/01.进程与线程.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5a3d21ab013d8432",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "53267781037d9ec7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Java/并发编程/01.进程与线程.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "8409ae6ebaccf0e9",
+  "lastOpenFiles": [
+    "Java/并发编程/assets/01.进程与线程/image-20240422133959486.png",
+    "Java/并发编程/assets/01.进程与线程/image-20240422120323254.png",
+    "Java/并发编程/01.进程与线程.md",
+    "Java/并发编程/assets/01.进程与线程/image-20240422120253606.png",
+    "Java/并发编程/assets/01.进程与线程/image-20240422133744267.png",
+    "Java/并发编程/assets/01.进程与线程",
+    "Java/并发编程/assets",
+    "Java/并发编程",
+    "Java"
+  ]
+}
