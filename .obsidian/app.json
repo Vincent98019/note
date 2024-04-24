@@ -2,9 +2,17 @@
   "livePreview": false,
   "showLineNumber": true,
   "trashOption": "system",
-  "attachmentFolderPath": "./assets/01.进程与线程",
+  "attachmentFolderPath": "./assets/未命名",
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "newFileLocation": "current",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
