@@ -4,18 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "dd5ee83a72838cc7",
+        "id": "6c7db1ce14399f4c",
         "type": "tabs",
         "children": [
           {
-            "id": "4a9102beadc0335d",
+            "id": "2be9056d7b5d32ab",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "并发编程/Java线程常见方法.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "0b4293c02d6eb4d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "软件/Sublime Text 4 设置中文.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "ba1064e2c174fb06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SpringBoot 下载网络文件、图片.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "97f769e153a383c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "硬件对接总结.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -44,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#aaa",
+                "query": "tag:#Linux",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,6 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "硬件对接总结.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "硬件对接总结.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,66 +161,89 @@
             "type": "leaf",
             "state": {
               "type": "outline",
+              "state": {
+                "file": "硬件对接总结.md"
+              }
+            }
+          },
+          {
+            "id": "4cbf0ff2b56b1e9e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 357.5
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "random-note:开始漫游笔记": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "oz-clear-unused-images:Clear Unused Images": false
     }
   },
-  "active": "4a9102beadc0335d",
+  "active": "97f769e153a383c7",
   "lastOpenFiles": [
-    "未命名.md",
-    "Linux/Linux虚拟机安装和设置ContOS7.6.md",
+    "javap命令使用.md",
+    "assets/javap命令使用/image-20240429133510654.png",
+    "assets/javap命令使用",
+    "SpringBoot 下载网络文件、图片.md",
     "Linux/VMware/VMware创建虚拟机.md",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135802396.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135751237.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135741080.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135726440.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135712248.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135702208.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135635850.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135617711.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135552420.png",
-    "Linux/VMware/assets/VMware创建虚拟机/image-20240424135542726.png",
-    "Linux/VMware/assets/VMware创建虚拟机",
-    "Linux/VMware/assets",
-    "Linux/VMware",
-    "Linux/assets/Linux虚拟机安装和设置ContOS7.6",
-    "Linux/assets",
-    "Linux",
-    "硬件对接总结.md",
-    "02.中间件/01.RocketMQ/RocketMQ.md",
-    "工作文档",
-    "新建文件夹",
-    "02.中间件/01.RocketMQ/01.RocketMQ概述.md",
-    "02.中间件/01.RocketMQ/02.RocketMQ安装.md",
-    "2024-04-23.md",
-    "标签.md",
-    "未命名 4.canvas",
-    "未命名 3.canvas",
+    "Linux/CentOS/ContOS7.6安装.md",
+    "Win10端口被占用.md",
+    "assets/Win10端口被占用/image-20240429115147378.png",
+    "assets/Win10端口被占用/image-20240429115119930.png",
+    "assets/Win10端口被占用/image-20240429115036875.png",
+    "assets/Win10端口被占用/image-20240429115004514.png",
+    "assets/Win10端口被占用/image-20240429114923493.png",
+    "assets/Win10端口被占用/image-20240429114854113.png",
+    "assets/Win10端口被占用",
+    "assets/SpringBoot 下载网络文件、图片/image-20240429114548155.png",
+    "assets/SpringBoot 下载网络文件、图片",
+    "assets",
+    "软件/Sublime Text 4 设置中文.md",
+    "RocketMQ.md",
+    "软件/assets/Sublime Text 4 设置中文/image-20240429112736808.png",
+    "软件/assets/Sublime Text 4 设置中文/image-20240429112720912.png",
+    "软件/assets/Sublime Text 4 设置中文",
+    "软件/assets",
+    "并发编程/Java线程常见方法.md",
+    "软件",
+    "并发编程/进程与线程.md",
+    "Java/Java概述与环境搭建.md",
+    "并发编程/Java线程.md",
+    "并发编程/assets/Java线程常见方法",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名.canvas",
-    "02.中间件/01.RocketMQ/04.RocketMQ集群监控平台.md",
-    "02.中间件/01.RocketMQ/03.RocketMQ集群搭建.md",
-    "02.中间件/01.RocketMQ/05.RocketMQ消息发送.md",
-    "02.中间件/01.RocketMQ/assets/04.RocketMQ集群监控平台",
-    "02.中间件/01.RocketMQ/assets/03.RocketMQ集群搭建",
-    "01.Java/并发编程/01.进程与线程.md"
+    "并发编程/assets/Java线程",
+    "中间件/RocketMQ/RocketMQ集群搭建.md",
+    "Java/未命名.md",
+    "工具/Docker/Docker安装与启动.md",
+    "数据库/MySQL/MySQL安装 Win10安装8.0.23版本.md",
+    "中间件/RocketMQ/RocketMQ安装.md",
+    "数据库/关系型数据库 & 非关系型数据库.md",
+    "数据库/MySQL/assets/MySQL安装 Win10安装8.0.23版本",
+    "工具/Docker/RocketMQ.md",
+    "中间件/RocketMQ/RocketMQ集群监控平台.md",
+    "中间件/RocketMQ/RocketMQ消息发送.md",
+    "中间件/RocketMQ/RocketMQ概述.md",
+    "中间件/RocketMQ/RocketMQ.md",
+    "硬件对接总结.md",
+    "2024-04-24.md",
+    "未命名 3.canvas",
+    "2024-04-23.md",
+    "未命名 4.canvas"
   ]
 }

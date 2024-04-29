@@ -2,7 +2,7 @@
   "livePreview": false,
   "showLineNumber": true,
   "trashOption": "system",
-  "attachmentFolderPath": "./assets/未命名",
+  "attachmentFolderPath": "./assets/硬件对接总结",
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
@@ -14,5 +14,6 @@
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
-  }
+  },
+  "defaultViewMode": "preview"
 }
