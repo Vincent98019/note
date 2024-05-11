@@ -2,6 +2,7 @@
 tags:
   - MySQL
   - 软件安装
+  - Windows
 ---
 
 

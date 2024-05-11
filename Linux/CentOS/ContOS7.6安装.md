@@ -1,5 +1,7 @@
-#Linux/CentOS #Linux 
-
+---
+tags:
+- Linux/CentOS 
+---
 
 
 > 选择**中文-简体中文 (中国)**，继续

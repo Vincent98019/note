@@ -1,6 +1,8 @@
-
-#Linux/VMware #Linux #Linux/CentOS
-
+---
+tags:
+- Linux/VMware
+- Linux/CentOS
+---
 
 
 > 新建虚拟机
