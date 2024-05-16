@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "977c47bd75037642",
+        "id": "e36670369d27f79c",
         "type": "tabs",
         "children": [
           {
-            "id": "96c0315a279e9e8f",
+            "id": "716c3ac6e293da14",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/Java安装—Win10.md",
+                "file": "Linux/VMware/VMware虚拟机迁移或删除.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "6c537660a0be4918",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "工具/Docker/Docker安装与启动.md",
                 "mode": "preview",
                 "source": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/Java安装—Win10.md",
+                "file": "工具/Docker/Docker安装与启动.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java/Java安装—Win10.md",
+                "file": "工具/Docker/Docker安装与启动.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/Java安装—Win10.md"
+                "file": "工具/Docker/Docker安装与启动.md"
               }
             }
           },
@@ -142,8 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5,
-    "collapsed": true
+    "width": 357.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -153,62 +165,60 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "random-note:开始漫游笔记": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "oz-clear-unused-images:Clear Unused Images": false,
-      "custom-sort:Toggle custom sorting": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "96c0315a279e9e8f",
+  "active": "6c537660a0be4918",
   "lastOpenFiles": [
+    "Linux/VMware/VMware虚拟机迁移或删除.md",
+    "Linux/VMware/VMware Tools.md",
+    "Linux/VMware/VMware创建虚拟机.md",
+    "Linux/VMware/assets/VMware Tools/image-20240511143547021.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143536741.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143520234.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143507548.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143459763.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143447751.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143438538.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143430052.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143417788.png",
+    "Linux/VMware/assets/VMware Tools/image-20240511143406793.png",
+    "Linux/VMware/assets/VMware Tools",
+    "Linux/VMware/VMware虚拟机克隆.md",
+    "Linux/VMware/VMware虚拟机快照.md",
+    "Linux/VMware/assets/VMware虚拟机迁移或删除",
+    "Linux/VMware/assets/VMware虚拟机快照",
+    "并发编程/Java线程.md",
+    "并发编程/进程与线程.md",
+    "中间件/Zookeeper/ZooKeeper 概述、下载.md",
+    "中间件/Zookeeper/assets",
+    "HTML/HTML基本结构标签.md",
+    "中间件/Zookeeper",
+    "Spring/assets",
+    "Spring",
+    "数据结构与算法/assets",
+    "HTML/HTML5语法.md",
+    "数据结构与算法",
+    "HTML",
+    "Java/Java封装.md",
+    "Java/Java包.md",
+    "Java/Java安装—Win10.md",
     "MyBatis/MyBatis概述&入门.md",
-    "未命名",
-    "MyBatis",
     "Java/javap命令使用.md",
     "Java/Java安装—Linux.md",
-    "Java/Java安装—Win10.md",
-    "Java/Java包.md",
-    "Java/Java封装.md",
     "Java/Java概述.md",
     "Java/Java权限修饰符.md",
-    "Java/assets/Java封装/image-20240506170529484.png",
-    "Java/assets/Java封装",
-    "Java/assets/Java安装—Linux/image-20240506170136972.png",
-    "Java/assets/Java安装—Linux/image-20240506170127638.png",
-    "Java/assets/Java安装—Linux/image-20240506170111610.png",
-    "Java/assets/Java安装—Linux/image-20240506170103351.png",
-    "Java/assets/Java安装—Linux/image-20240506170050588.png",
-    "Java/assets/Java安装—Linux/image-20240506170026230.png",
-    "Java/assets/Java安装—Linux/image-20240506170008901.png",
-    "Java/assets/Java安装—Linux/image-20240506170001591.png",
-    "Java/assets/Java安装—Linux/image-20240506165951038.png",
-    "Java/assets/Java安装—Linux",
-    "冒泡排序.md",
-    "线性查找.md",
+    "数据结构与算法/冒泡排序.md",
+    "数据结构与算法/线性查找.md",
     "工具/Docker/Docker安装与启动.md",
-    "Java/assets/Java权限修饰符",
-    "Java/assets/Java包",
-    "assets/线性查找",
     "Win10端口被占用.md",
     "软件/Sublime Text 4 设置中文.md",
-    "SpringBoot 下载网络文件、图片.md",
-    "ZooKeeper 概述、下载.md",
+    "Spring/SpringBoot 下载网络文件、图片.md",
     "中间件/RocketMQ/RocketMQ消息发送.md",
-    "中间件/RocketMQ/RocketMQ安装.md",
-    "数据库/MySQL/MySQL安装 Win10安装8.0.23版本.md",
-    "assets/冒泡排序",
-    "Java/assets/Java安装—Win10",
-    "Linux/CentOS/ContOS7.6安装.md",
-    "Linux/VMware/VMware创建虚拟机.md",
-    "硬件对接总结.md",
-    "并发编程/Java线程常见方法.md",
-    "assets/ZooKeeper 概述、下载",
-    "RocketMQ.md",
-    "并发编程/进程与线程.md",
-    "并发编程/Java线程.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名.canvas",
-    "中间件/RocketMQ/RocketMQ集群搭建.md",
     "未命名 3.canvas",
     "未命名 4.canvas"
   ]
