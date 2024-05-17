@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ffc18cd-64a4-4abc-a5c8-6551f2b3e85b" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.obsidian/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/appearance.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/appearance.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/bookmarks.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/bookmarks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/community-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/community-plugins.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/workspace.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Linux/VMware/assets/VMware虚拟机克隆/Pasted image 20240511105910.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Linux/VMware/assets/VMware虚拟机快照/image-20240511141442254.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/数据结构与算法/assets/冒泡排序/image-20240429155146790.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\coding\Maven\apache-maven-3.8.5" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\coding\Maven\apache-maven-3.8.5\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2gWwoEOrZEBNOpWE7n66noDpgfZ" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/work/qinglanhong/parkzhiwu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ffc18cd-64a4-4abc-a5c8-6551f2b3e85b" name="更改" comment="" />
+      <created>1713436201675</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713436201675</updated>
+      <workItem from="1713436202724" duration="45000" />
+      <workItem from="1715826814824" duration="1347000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

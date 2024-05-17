@@ -4,35 +4,95 @@
     "type": "split",
     "children": [
       {
-        "id": "e36670369d27f79c",
+        "id": "977c47bd75037642",
         "type": "tabs",
         "children": [
           {
-            "id": "716c3ac6e293da14",
+            "id": "56984bac9026d77f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/VMware/VMware虚拟机迁移或删除.md",
+                "file": "Java/Java包.md",
                 "mode": "preview",
                 "source": true
               }
             }
           },
           {
-            "id": "6c537660a0be4918",
+            "id": "57ee3b3827eadc41",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工具/Docker/Docker安装与启动.md",
+                "file": "Java/错误集锦/编码GBK的不可映射字符.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "8995c1be098aa9d2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/Java注释.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "0d3e021b98d9ec2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/错误集锦/编码GBK的不可映射字符.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "26853a083d37582b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sortspec.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "9547e4550cd72ee2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "单例模式.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "7d17c7d409dc2dc3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/Java 基本数据类型（数据类型转换）.md",
                 "mode": "preview",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -98,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工具/Docker/Docker安装与启动.md",
+                "file": "单例模式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工具/Docker/Docker安装与启动.md",
+                "file": "单例模式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工具/Docker/Docker安装与启动.md"
+                "file": "单例模式.md"
               }
             }
           },
@@ -151,11 +211,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 357.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,60 +226,64 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "random-note:开始漫游笔记": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "oz-clear-unused-images:Clear Unused Images": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "custom-sort:Toggle custom sorting": false,
+      "obsidian-local-images-plus:Local Images Plus  0.15.9\r\nLocalize attachments (plugin folder)": false,
+      "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "6c537660a0be4918",
+  "active": "9547e4550cd72ee2",
   "lastOpenFiles": [
-    "Linux/VMware/VMware虚拟机迁移或删除.md",
-    "Linux/VMware/VMware Tools.md",
-    "Linux/VMware/VMware创建虚拟机.md",
-    "Linux/VMware/assets/VMware Tools/image-20240511143547021.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143536741.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143520234.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143507548.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143459763.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143447751.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143438538.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143430052.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143417788.png",
-    "Linux/VMware/assets/VMware Tools/image-20240511143406793.png",
-    "Linux/VMware/assets/VMware Tools",
-    "Linux/VMware/VMware虚拟机克隆.md",
-    "Linux/VMware/VMware虚拟机快照.md",
-    "Linux/VMware/assets/VMware虚拟机迁移或删除",
-    "Linux/VMware/assets/VMware虚拟机快照",
-    "并发编程/Java线程.md",
-    "并发编程/进程与线程.md",
-    "中间件/Zookeeper/ZooKeeper 概述、下载.md",
-    "中间件/Zookeeper/assets",
-    "HTML/HTML基本结构标签.md",
-    "中间件/Zookeeper",
-    "Spring/assets",
-    "Spring",
-    "数据结构与算法/assets",
-    "HTML/HTML5语法.md",
-    "数据结构与算法",
-    "HTML",
-    "Java/Java封装.md",
+    "Omnivore/2024-05-16/Java SPI与Spring SPI全面解析（源码级别讲解）_java spi spring spi-CSDN博客.md",
+    "Omnivore/2024-05-16/Java 文档注释全攻略，建议收藏！ - 知乎.md",
+    "assets/单例模式",
+    "sortspec.md",
+    "单例模式.md",
+    "设计模式/创建者模式",
+    "设计模式",
+    "Java/Java 基本数据类型（数据类型转换）.md",
+    "Java/assets/Java 基本数据类型（数据类型转换）/e104676807c091d7ddaf20d8f830fc11_MD5.png",
+    "Java/assets/Java 基本数据类型（数据类型转换）/6516bb0424935f489c5e14ab4681da86_MD5.png",
+    "Java/assets/Java 基本数据类型（数据类型转换）/31a2466389fd5b55d73584af2e3a03fe_MD5.png",
+    "Java/assets/Java 基本数据类型（数据类型转换）",
+    "Java/Java变量与标识符（命名规范）.md",
+    "Java/assets/Java变量与标识符（命名规范）",
+    "Java/错误集锦/编码GBK的不可映射字符.md",
+    "Omnivore/2024-05-16/linux 系统下四种nginx安装方法_linux安装nginx-CSDN博客.md",
+    "Omnivore/2024-05-16/Getting Started with Omnivore.md",
+    "Omnivore/2024-05-16/Omnivore——一款开源、免费、全平台、好用、高颜值的稍后读软件 - 知乎.md",
+    "Omnivore/2024-05-16/Omnivore - Microsoft Edge Addons.md",
+    "Omnivore/2024-05-16/The Secret Power of ‘Read It Later’ Apps.md",
+    "Omnivore/2024-05-16/Organize your Omnivore library with labels.md",
+    "Omnivore/2024-05-16",
+    "Omnivore",
+    "未命名.canvas",
+    "---.md",
+    "未命名 1",
     "Java/Java包.md",
-    "Java/Java安装—Win10.md",
-    "MyBatis/MyBatis概述&入门.md",
-    "Java/javap命令使用.md",
+    "Java/错误集锦/assets",
+    "Java/错误集锦",
+    "Java/错误集锦/assets/编码GBK的不可映射字符/image-20240516110808526.png",
+    "Java/错误集锦/assets/编码GBK的不可映射字符/image-20240516110755063.png",
+    "Java/Java注释.md",
+    "Java/Java入门程序.md",
+    "Java/assets/Java入门程序/image-20240516105717944.png",
+    "Java/Java.md",
+    "并发编程/Java线程常见方法.md",
     "Java/Java安装—Linux.md",
-    "Java/Java概述.md",
-    "Java/Java权限修饰符.md",
-    "数据结构与算法/冒泡排序.md",
+    "数据结构与算法/assets/线性查找/image-20240429181156481.png",
+    "数据结构与算法/assets/线性查找/cf7d854c47794226989fdbc7887fa259.gif",
+    "数据结构与算法/assets/冒泡排序/image-20240429155311813.png",
+    "数据结构与算法/assets/冒泡排序/image-20240429155259282.png",
     "数据结构与算法/线性查找.md",
-    "工具/Docker/Docker安装与启动.md",
-    "Win10端口被占用.md",
-    "软件/Sublime Text 4 设置中文.md",
+    "数据结构与算法/冒泡排序.md",
+    "中间件/Zookeeper/ZooKeeper 概述、下载.md",
     "Spring/SpringBoot 下载网络文件、图片.md",
-    "中间件/RocketMQ/RocketMQ消息发送.md",
+    "Linux/VMware/VMware虚拟机迁移或删除.md",
+    "Linux/VMware/VMware虚拟机快照.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
-    "未命名.canvas",
     "未命名 3.canvas",
     "未命名 4.canvas"
   ]
