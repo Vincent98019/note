@@ -2,7 +2,7 @@
 
 每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。
 
-![image](assets/Java%20基本数据类型（数据类型转换）/e104676807c091d7ddaf20d8f830fc11_MD5.png)
+![image](assets/Java基本数据类型（数据类型转换）/e104676807c091d7ddaf20d8f830fc11_MD5.png)
 
 Java是一种强类型语言。必须为每一个变量声明一种类型。在Java中一共有**8种基本类型（primitive type）**，其中有4种整型、2种浮点类型、1种用于表示Unicode编码的字符单元的字符类型char和1种用于表示真值的boolean类型。
 
@@ -185,7 +185,7 @@ public static void main(String[] args) {
 }
 ```
 
-![image](assets/Java%20基本数据类型（数据类型转换）/6516bb0424935f489c5e14ab4681da86_MD5.png)
+![image](assets/Java基本数据类型（数据类型转换）/6516bb0424935f489c5e14ab4681da86_MD5.png)
 
 
 
@@ -244,7 +244,7 @@ public static void main(String[] args) {
 
 
 
-![image](assets/Java%20基本数据类型（数据类型转换）/31a2466389fd5b55d73584af2e3a03fe_MD5.png)
+![image](assets/Java基本数据类型（数据类型转换）/31a2466389fd5b55d73584af2e3a03fe_MD5.png)
 
 
 
