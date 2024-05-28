@@ -5,6 +5,7 @@ sorting-spec: |-
   assets
   ---
   Java
+  Spring
 
 
   ---------------------------------------------------
@@ -28,6 +29,14 @@ sorting-spec: |-
   Java权限修饰符
   Java封装
   Java继承
+  Java多态
+  Java关键字super
+  Java关键字static
+  Java类Object
+  Java方法main
+  Java代码块
+  Java关键字final
+  Java抽象abstract
   ---
   错误集锦
 
@@ -35,6 +44,16 @@ sorting-spec: |-
   target-folder: Java/错误集锦
   assets
   编码GBK的不可映射字符
+
+  ---------------------------------------------------
+  target-folder: Spring
+  assets
+  ---
+  Spring概述
+  SpringIOC-XML
+  SpringIOC注解
+  SpringAOP概述
+  ---
 
   ----------------------------------
   target-folder: Linux/VMware
@@ -58,6 +77,13 @@ sorting-spec: |-
   HTML多媒体标签
   HTML列表标签
   HTML表单标签
-  HTML表哥标签
+  HTML表格标签
+  
+  ----------------------------------
+  target-folder: 前端/CSS
+  assets
+  CSS基本语法
+  CSS选择器
+  CSS文本字体
 ---
 
