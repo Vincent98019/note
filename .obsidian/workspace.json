@@ -22,102 +22,22 @@
             }
           },
           {
-            "id": "c0876460380df502",
+            "id": "ed66794e94268325",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Java/Java代码块.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "92fd92c812359e6c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Java/Java关键字final.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "49728a9a058fc376",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "前端/CSS/CSS基本语法.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "3dc0e44122d40859",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "前端/CSS/CSS文本字体.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "666bfb07cf3302a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spring/SpringIOC-XML.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "16cf43711651faa5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spring/SpringAOP概述.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "0f83c691d631d8b6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Java/Java类Object.md",
-                "mode": "preview",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "f2c1a6a641f120f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Java/Java抽象abstract.md",
-                "mode": "preview",
-                "source": true
+                "file": "未命名.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sortspec.md",
+                "file": "未命名.canvas",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -200,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sortspec.md",
+                "file": "未命名.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -223,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sortspec.md"
+                "file": "未命名.canvas"
               }
             }
           },
@@ -257,54 +177,54 @@
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "cba37ddea48b126d",
+  "active": "573d364e499ca4ca",
   "lastOpenFiles": [
-    "Java/Java抽象abstract.md",
-    "Java/assets/Java抽象abstract/85daec9ea5c4253c579f6f157cd9fd80_MD5.png",
-    "Java/assets/Java抽象abstract/b94784c225685ce51bc121275b08f265_MD5.png",
-    "Java/assets/Java抽象abstract/562feca3d115b516770e2bf5b6e288f1_MD5.png",
-    "Java/assets/Java抽象abstract/31ae96e756257e65d9b964aee5abc60c_MD5.png",
-    "Java/assets/Java抽象abstract/cd128286fd8f13c459c2d96db813a5b0_MD5.png",
-    "Java/assets/Java抽象abstract/1e23c46444d6b738786d7364e9e48cf3_MD5.png",
-    "Java/assets/Java抽象abstract/11d0cc38ab08888ba4205b590b0a0e08_MD5.png",
-    "Java/assets/Java抽象abstract/ae0dde549fe5dff3409dd2395fea20af_MD5.png",
-    "Java/assets/Java抽象abstract/6646ab4726fc6ff7d3c20b3d8588f8b3_MD5.png",
-    "Java/assets/Java抽象abstract/a50711fff195deb18f1f73fc2ef3fd17_MD5.png",
-    "Java/assets/Java抽象abstract",
-    "Java/Java类Object.md",
-    "Spring/SpringAOP概述.md",
-    "sortspec.md",
-    "Spring/assets/SpringAOP概述",
-    "Spring/SpringIOC-XML.md",
-    "Java/Java关键字final.md",
-    "Java/assets/Java关键字final",
-    "Java/Java代码块.md",
-    "Java/assets/Java代码块",
-    "前端/CSS/CSS文本字体.md",
-    "前端/CSS/assets/CSS文本字体",
-    "前端/CSS/CSS基本语法.md",
-    "Java/Java基本数据类型（数据类型转换）.md",
-    "Java/Java关键字static.md",
-    "Java/Java方法main.md",
-    "数据库/MySQL/MySQL安装—Win10.md",
-    "数据库/MySQL/MySQL安装—CentOS.md",
-    "数据库/MySQL/assets/MySQL安装—CentOS",
-    "Spring/SpringBoot 下载网络文件、图片.md",
-    "数据库/MySQL/assets/SpringBoot 下载网络文件、图片",
-    "Spring/SpringIOC注解.md",
-    "Spring/Spring概述.md",
-    "Spring/assets/Spring概述",
-    "Spring/assets/SpringIOC注解",
-    "Java/assets/Java方法main",
-    "Java/Java关键字super.md",
-    "前端/HTML/HTML语法.md",
-    "Linux/CentOS/ContOS7.6安装.md",
-    "Java/Java多态.md",
-    "Java/Java流程控制.md",
-    "前端/CSS/CSS选择器.md",
-    "Linux/CentOS/Linux目录结构.md",
-    "Java/Java权限修饰符.md",
     "未命名.canvas",
+    "Java/JVM/JVM直接内存.md",
+    "Java/JVM/未命名.md",
+    "Java/JVM/assets/JVM直接内存/e01ccec515b2a421f02f92b7cb595105_MD5.png",
+    "Java/JVM/assets/JVM直接内存/2d0dc076f2ccd0a5cc3c6c4ed2fb5aae_MD5.png",
+    "Java/JVM/assets/JVM直接内存/ed7004398d4b19ff7d65db3645b2a98a_MD5.png",
+    "Java/JVM/assets/JVM直接内存",
+    "Java/JVM/JVM方法区.md",
+    "Java/JVM/assets/JVM方法区/b11cd986135cceca6413602116169257_MD5.png",
+    "Java/JVM/assets/JVM方法区/1b26ae11b52efcf82458496f1f74f658_MD5.png",
+    "Java/JVM/assets/JVM方法区/58847041eaa4fef8aa9cea6aef628a90_MD5.png",
+    "Java/JVM/assets/JVM方法区/08bb4b4c79ed2f593ea5004d5c08c7b8_MD5.png",
+    "Java/JVM/assets/JVM方法区/48811b8fbbd436cad6a60dca87257535_MD5.png",
+    "Java/JVM/assets/JVM方法区/11153f435bdf41b94b13b78b87a31cad_MD5.png",
+    "Java/JVM/assets/JVM方法区",
+    "Java/JVM/JVM堆.md",
+    "Java/JVM/assets/JVM堆/69bd0280a06c0c8ec5d37384f7d780e8_MD5.png",
+    "Java/JVM/assets/JVM堆",
+    "Java/JVM/JVM栈.md",
+    "Java/JVM/assets/JVM栈",
+    "Java/JVM/assets/未命名",
+    "sortspec.md",
+    "Java/JVM/JVM字节码指令.md",
+    "Java/JVM/JVM编译期处理.md",
+    "Java/JVM/JVM类文件结构.md",
+    "Java/JVM/assets/JVM类文件结构",
+    "Java/JVM/assets/JVM字节码指令",
+    "Java/JVM/assets",
+    "Java/JavaWeb/Java Listener.md",
+    "Java/JVM",
+    "Java/JavaWeb/assets/Java Listener",
+    "Java/JavaWeb/Java Filter.md",
+    "Java/JavaWeb/Java Session.md",
+    "Java/JavaWeb/Java Servlet.md",
+    "Java/JavaWeb/Java Cookie.md",
+    "Java/JavaWeb/Java Response.md",
+    "Java/JavaWeb/Java Request.md",
+    "Java/JavaWeb/Java JSP.md",
+    "Java/JavaWeb/Java XML.md",
+    "Java/JavaWeb/Java Tomcat.md",
+    "XML.md",
+    "HTTP.md",
+    "Java/面向对象/未命名.md",
+    "Java/面向对象/Java注解.md",
+    "Java/面向对象/Java关键字static.md",
+    "Java/面向对象/Java代码块.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名 3.canvas",
