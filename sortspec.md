@@ -9,7 +9,7 @@ sorting-spec: |-
   ---
   消息队列
 
-  ---------------------------------------------------
+  ------------------------------------------------------------------
   target-folder: Java
   assets
   ---
@@ -17,7 +17,6 @@ sorting-spec: |-
   面向对象
   常用类
   集合
-  高级
   ---
   IO流
   并发编程
@@ -26,9 +25,12 @@ sorting-spec: |-
   JDBC
   JavaWeb
   ---
+  JVM
+  ---
+  新特性
   错误集锦
 
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/基础
   assets
   ---
@@ -43,7 +45,7 @@ sorting-spec: |-
   Java流程控制
   Java数组
   
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/面向对象
   assets
   ---
@@ -62,8 +64,12 @@ sorting-spec: |-
   Java接口interface
   Java内部类
   Java枚举Enum
+  Java注解
+  Java异常
+  Java泛型
+  Java反射
   
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/常用类
   assets
   ---
@@ -77,8 +83,10 @@ sorting-spec: |-
   Java类System
   Java类Biglnteger和BigDecimal
   Java日期时间类
+  Java正则表达式
+  Java类Pattern和Matcher
 
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/集合
   assets
   ---
@@ -90,19 +98,8 @@ sorting-spec: |-
   Java TreeSet & TreeMap
   Java Collections
   Java Comparable & Comparator
-
-  ----------------------------------
-  target-folder: Java/高级
-  assets
-  ---
-  Java注解
-  Java异常
-  Java泛型
-  Java正则表达式
-  Java类Pattern和Matcher
-  Java反射
-
-  ----------------------------------
+  
+  ------------------------------------------
   target-folder: Java/IO流
   assets
   ---
@@ -115,7 +112,7 @@ sorting-spec: |-
   Java转换流&字符集
   Java打印流&标准输入输出
 
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/并发编程
   assets
   ---
@@ -128,30 +125,111 @@ sorting-spec: |-
   Java原理Monitor
   Java原理synchronized
   
-  ----------------------------------
+  ------------------------------------------
   target-folder: Java/网络编程
   assets
   ---
   Java网络通信
   Java类Socket
   JavaTCP文件上传
+
+  ------------------------------------------
+  target-folder: Java/JavaWeb
+  assets
+  Java XML
+  Java Tomcat
+  Java Servlet
+  Java JSP
+  Java Request
+  Java Response
+  Java Cookie
+  Java Session
+  Java Filter
+  Java Listener
+
+  ------------------------------------------
+  target-folder: Java/JVM
+  assets
+  JVM类文件结构
+  JVM字节码指令
+  JVM编译期处理
+  JVM栈
+  JVM堆
+  JVM方法区
+  JVM直接内存
+  JVM垃圾回收
+  JVM类加载阶段
+  JVM类加载器
+  JVM运行期优化
   
-  ----------------------------------
+  ------------------------------------------
+  target-folder: Java/新特性
+  assets
+  Java8
+  
+  ----------------------------
+  target-folder: Java/新特性/Java8
+  assets
+  Java8 Stream流
+  Java8 Optional类
+  Java8 函数式接口
+  Java8 方法引用
+  Java8 Lambda表达式
+  
+  ------------------------------------------
   target-folder: Java/错误集锦
   assets
   编码GBK的不可映射字符
 
-  ---------------------------------------------------
+  ------------------------------------------------------------------
   target-folder: Spring
   assets
   ---
+  Spring
+  SpringMVC
+  SpringBoot
+  SpringCloud
+  
+  ------------------------------------------
+  target-folder: Spring/Spring
+  assets
   Spring概述
   SpringIOC-XML
   SpringIOC注解
   SpringAOP概述
   SpringAOP
-  ---
-  SpringCloud概述
+  Spring事务管理
+
+  ------------------------------------------
+  target-folder: Spring/SpringMVC
+  assets
+  SpringMVC入门
+  SpringMVC RESTful
+  SpringMVC执行流程
+  SpringMVC组件解析
+  SpringMVC DispatcherServlet
+  SpringMVC请求
+  SpringMVC响应
+
+  ------------------------------------------------------------------
+
+
+  ------------------------------------------------------------------
+  ------------------------------------------------------------------
+  ------------------------------------------------------------------
+  ------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
   ----------------------------------
   target-folder: Linux/VMware

@@ -22,22 +22,27 @@
             }
           },
           {
-            "id": "ed66794e94268325",
+            "id": "45ac21324330f054",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "未命名.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "设计模式/创建者模式/建造者模式.md",
+                "mode": "source",
+                "source": true
               }
+            }
+          },
+          {
+            "id": "ac8aa87ee4b5a49a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -103,7 +108,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "未命名.canvas",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +124,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "未命名.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,9 +145,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "未命名.canvas"
-              }
+              "state": {}
             }
           },
           {
@@ -177,54 +178,55 @@
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "573d364e499ca4ca",
+  "active": "ac8aa87ee4b5a49a",
   "lastOpenFiles": [
-    "未命名.canvas",
-    "Java/JVM/JVM直接内存.md",
-    "Java/JVM/未命名.md",
-    "Java/JVM/assets/JVM直接内存/e01ccec515b2a421f02f92b7cb595105_MD5.png",
-    "Java/JVM/assets/JVM直接内存/2d0dc076f2ccd0a5cc3c6c4ed2fb5aae_MD5.png",
-    "Java/JVM/assets/JVM直接内存/ed7004398d4b19ff7d65db3645b2a98a_MD5.png",
-    "Java/JVM/assets/JVM直接内存",
-    "Java/JVM/JVM方法区.md",
-    "Java/JVM/assets/JVM方法区/b11cd986135cceca6413602116169257_MD5.png",
-    "Java/JVM/assets/JVM方法区/1b26ae11b52efcf82458496f1f74f658_MD5.png",
-    "Java/JVM/assets/JVM方法区/58847041eaa4fef8aa9cea6aef628a90_MD5.png",
-    "Java/JVM/assets/JVM方法区/08bb4b4c79ed2f593ea5004d5c08c7b8_MD5.png",
-    "Java/JVM/assets/JVM方法区/48811b8fbbd436cad6a60dca87257535_MD5.png",
-    "Java/JVM/assets/JVM方法区/11153f435bdf41b94b13b78b87a31cad_MD5.png",
-    "Java/JVM/assets/JVM方法区",
-    "Java/JVM/JVM堆.md",
-    "Java/JVM/assets/JVM堆/69bd0280a06c0c8ec5d37384f7d780e8_MD5.png",
-    "Java/JVM/assets/JVM堆",
-    "Java/JVM/JVM栈.md",
-    "Java/JVM/assets/JVM栈",
-    "Java/JVM/assets/未命名",
+    "Zookeeper/ZooKeeper 概述、下载.md",
+    "Win10端口被占用.md",
+    "Spring/SpringBoot 下载网络文件、图片.md",
+    "软件/Sublime Text 4 设置中文.md",
+    "MySQL/MySQL安装—Win10.md",
+    "MySQL/MySQL安装—CentOS.md",
+    "数据库/关系型数据库 & 非关系型数据库.md",
+    "设计模式/创建者模式/原型模式.md",
     "sortspec.md",
-    "Java/JVM/JVM字节码指令.md",
-    "Java/JVM/JVM编译期处理.md",
-    "Java/JVM/JVM类文件结构.md",
-    "Java/JVM/assets/JVM类文件结构",
-    "Java/JVM/assets/JVM字节码指令",
-    "Java/JVM/assets",
-    "Java/JavaWeb/Java Listener.md",
-    "Java/JVM",
-    "Java/JavaWeb/assets/Java Listener",
-    "Java/JavaWeb/Java Filter.md",
-    "Java/JavaWeb/Java Session.md",
-    "Java/JavaWeb/Java Servlet.md",
-    "Java/JavaWeb/Java Cookie.md",
-    "Java/JavaWeb/Java Response.md",
-    "Java/JavaWeb/Java Request.md",
-    "Java/JavaWeb/Java JSP.md",
-    "Java/JavaWeb/Java XML.md",
-    "Java/JavaWeb/Java Tomcat.md",
+    "设计模式/创建者模式/建造者模式.md",
+    "设计模式/创建者模式/assets/建造者模式/4wyQzg7E6EvKw7yrNdi9oRQVZoYO_bV8uaPocClcyd8.png",
+    "设计模式/创建者模式/assets/原型模式/wcF6eN9Iecs2lDY4hVoMgfjlgi0JvX1e41_kd5UCJlk.png",
+    "设计模式/创建者模式/assets/原型模式/SS4XjRFVwhQWY8kJzDCqh4PL13DZeZhCzExtypZXcGU.png",
+    "设计模式/创建者模式/assets/原型模式/oLvSx_DFyazoMv5AQUh2GP0cv60Zpy3xKkVJD-cKi-4.png",
+    "设计模式/创建者模式/assets/原型模式",
+    "设计模式/创建者模式/工厂模式🆚建造者模式.md",
+    "设计模式/创建者模式/工厂模式.md",
+    "设计模式/创建者模式/assets/建造者模式/hYsmN8jPT78jmp3e3jjjGThWp_lhguH-DMiiOzCYRCo.png",
+    "设计模式/创建者模式/assets/建造者模式/jFNq4gShH6bd8xoBOW0apjFWmv4VaGe-aBgQBxUBZis.png",
+    "设计模式/创建者模式/单例模式.md",
+    "设计模式/创建者模式/assets/建造者模式",
+    "RabbitMQ/RabbitMQ入门程序.md",
+    "RabbitMQ/assets/RabbitMQ入门程序/d3077e785bce93eeb7ae4f31104d1bce_MD5.png",
+    "RabbitMQ/assets/RabbitMQ入门程序",
+    "RabbitMQ/RabbitMQ安装.md",
+    "RabbitMQ/assets/RabbitMQ安装/27f8b9dadd3c46d9724a45971480fc84_MD5.png",
+    "RabbitMQ/assets/RabbitMQ安装/bcddfd12aa61bc7e434888d269f29735_MD5.png",
+    "RabbitMQ/assets/RabbitMQ安装/dc369814610bac7139659485f80aae38_MD5.png",
+    "RabbitMQ/assets/RabbitMQ安装",
+    "RabbitMQ/RabbitMQ介绍.md",
+    "RabbitMQ/assets/RabbitMQ介绍",
+    "RabbitMQ/MQ的相关概念.md",
+    "RabbitMQ/assets/MQ的相关概念",
+    "RabbitMQ/assets",
+    "Spring/SpringCloud概述.md",
+    "RabbitMQ",
+    "未命名.md",
+    "前端/CSS/CSS文本字体.md",
+    "前端/CSS/CSS选择器.md",
     "XML.md",
     "HTTP.md",
-    "Java/面向对象/未命名.md",
-    "Java/面向对象/Java注解.md",
-    "Java/面向对象/Java关键字static.md",
-    "Java/面向对象/Java代码块.md",
+    "Golang/未命名.md",
+    "Linux/CentOS/ContOS7.6安装.md",
+    "Docker/Docker镜像操作.md",
+    "Docker/assets/Docker镜像操作",
+    "Golang/assets/未命名",
+    "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名 3.canvas",
