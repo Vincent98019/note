@@ -7,7 +7,13 @@ sorting-spec: |-
   Java
   Spring
   ---
-  消息队列
+  数据库
+  中间件
+  ---
+  操作系统
+  容器
+  
+  
 
   ------------------------------------------------------------------
   target-folder: Java
@@ -39,8 +45,8 @@ sorting-spec: |-
   Java安装—Linux
   Java入门程序
   Java注释
-  Java变量与标识符（命名规范）
-  Java基本数据类型（数据类型转换）
+  Java变量与标识符
+  Java基本数据类型
   Java运算符
   Java流程控制
   Java数组
@@ -189,6 +195,7 @@ sorting-spec: |-
   SpringMVC
   SpringBoot
   SpringCloud
+  SpringSecurity
   
   ------------------------------------------
   target-folder: Spring/Spring
@@ -210,44 +217,53 @@ sorting-spec: |-
   SpringMVC DispatcherServlet
   SpringMVC请求
   SpringMVC响应
-
-  ------------------------------------------------------------------
-
-
-  ------------------------------------------------------------------
-  ------------------------------------------------------------------
-  ------------------------------------------------------------------
-  ------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-  ----------------------------------
-  target-folder: Linux/VMware
+  
+  ------------------------------------------
+  target-folder: Spring/SpringBoot
   assets
-  VMware创建虚拟机
-  VMware虚拟机克隆
-  VMware虚拟机快照
-  VMware虚拟机迁移或删除
-  VMware Tools
 
+  ------------------------------------------
+  target-folder: Spring/SpringCloud
+  assets
+  SpringCloud概述
+
+  ------------------------------------------
+  target-folder: Spring/SpringSecurity
+  assets
+  SpringSecurity概述
+  SpringSecurity基本原理
+  SpringSecurity认证的三种方式
+  SpringSecurity用户授权
+  SpringSecurity用户认证
+
+  ------------------------------------------------------------------
+  target-folder: 数据库
+  assets
+  ---
+  关系型数据库 & 非关系型数据库
+  MySQL
+  
   ----------------------------------
+  target-folder: 数据库/MySQL
+  assets
+  MySQL安装—CentOS
+  MySQL安装—Win10
+  MySQL操作数据库 DDL
+  MySQL操作表 DDL
+  MySQL操作数据 DML
+  MySQL基本查询 DQL
+  MySQL条件查询 DQL
+  MySQL多表查询 DQL
+  MySQL用户管理 DCL
+  
 
-  ---------------------------------------------------
-  target-folder: 消息队列
+  ------------------------------------------------------------------
+  target-folder: 中间件
   RabbitMQ
+  Elasticsearch
 
   ----------------------------------
-  target-folder: 消息队列/RabbitMQ
+  target-folder: 中间件/RabbitMQ
   assets
   RabbitMQ介绍
   RabbitMQ安装
@@ -260,7 +276,61 @@ sorting-spec: |-
   RabbitMQ发布确认高级
   RabbitMQ其他知识点
 
-  ---------------------------------------------------
+  ----------------------------------
+  target-folder: 中间件/Elasticsearch
+  assets
+  Elasticsearch安装
+  
+  ------------------------------------------------------------------
+  target-folder: 容器
+  assets
+  ---
+  Docker
+
+  ----------------------------------
+  target-folder: 容器/Docker
+  assets
+  Docker安装与启动
+  Docker镜像操作
+  Docker容器操作
+  Docker数据卷操作
+
+  ------------------------------------------------------------------
+  target-folder: 操作系统
+  assets
+  Linux
+  CentOS
+  Windows
+  VMware
+  
+  ----------------------------------
+  target-folder: 操作系统/Linux
+  assets
+  Linux目录结构
+  Linux常用命令
+  Linux vi和vim编辑器
+  Linux用户管理
+
+  ----------------------------------
+  target-folder: 操作系统/CentOS
+  assets
+  ContOS7.6安装
+  
+  ----------------------------------
+  target-folder: 操作系统/Windows
+  assets
+  Win10端口被占用
+  
+  ----------------------------------
+  target-folder: 操作系统/VMware
+  assets
+  VMware创建虚拟机
+  VMware虚拟机克隆
+  VMware虚拟机快照
+  VMware虚拟机迁移或删除
+  VMware Tools
+
+  ------------------------------------------------------------------
   target-folder: 前端
   HTML
 

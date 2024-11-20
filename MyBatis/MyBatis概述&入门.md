@@ -120,3 +120,90 @@ GitHub：[https://github.com/mybatis/mybatis-3](https://github.com/mybatis/mybat
     </mappers>  
 </configuration>
 ```
+
+创建实体类：
+```java
+@Getter
+@Setter
+public class User {
+	private Integer id;
+	private String name;
+}
+```
+
+
+编写持久层接口 UserDao：
+也可以起名为UserMapper
+```java
+public interface UserDao {
+	List<User> findAll();
+}
+```
+
+
+编写持久层接口的映射文件 UserDao.xml ：
+- 创建位置：必须和持久层接口在相同的包中。
+- 名称：必须以持久层接口名称命名文件名，扩展名是.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.arbor.dao.UserDao">
+	<!-- 配置查询所有操作 -->
+    <select id="findAll" resultType="com.arbor.domain.User">
+		select * from user
+	</select>
+</mapper>
+```
+
+
+测试类：
+```java
+public class MybatisTest {
+    
+    @Test
+	public void testFindAll() throws Exception {
+		//1.读取配置文件
+		InputStream in = Resources.getResourceAsStream("SqlMapConfig.xml");
+		//2.创建 SqlSessionFactory 的构建者对象
+		SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+		//3.使用构建者创建工厂对象 SqlSessionFactory
+		SqlSessionFactory factory = builder.build(in);
+		//4.使用 SqlSessionFactory 生产 SqlSession 对象
+		SqlSession session = factory.openSession();
+		//5.使用 SqlSession 创建 dao 接口的代理对象
+		UserDao userDao = session.getMapper(UserDao.class);
+		//6.使用代理对象执行查询所有方法
+		List<User> users = userDao.findAll();
+		for(User user : users) {
+			System.out.println(user);
+		}
+		//7.释放资源
+		session.close();
+		in.close();
+	}
+}
+```
+
+## 基于注解的使用
+
+在使用基于注解的 Mybatis 配置时，移除 xml 的映射配置（UserDao.xml）。
+
+在持久层接口中添加注解：
+```java
+public interface UserDao {
+	@Select("select * from user")
+	List<User> findAll();
+}
+```
+
+修改mybatis-config.xml文件：
+```xml
+<!-- 告知 mybatis 映射配置的位置 -->
+<mappers>
+    <mapper class="com.arbor.dao.UserDao"/>
+</mappers>
+```
