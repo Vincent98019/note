@@ -22,8 +22,23 @@
               "icon": "lucide-file",
               "title": "sortspec"
             }
+          },
+          {
+            "id": "8bb4e0a4491a2a31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "数据库/MySQL/MySQL操作表 DDL.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "MySQL操作表 DDL"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -54,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Java/并发编程",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -141,10 +156,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sortspec.md"
+                "file": "数据库/MySQL/MySQL操作表 DDL.md"
               },
               "icon": "lucide-list",
-              "title": "sortspec 的大纲"
+              "title": "MySQL操作表 DDL 的大纲"
             }
           },
           {
@@ -162,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5,
-    "collapsed": true
+    "width": 357.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,54 +194,55 @@
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "573d364e499ca4ca",
+  "active": "8bb4e0a4491a2a31",
   "lastOpenFiles": [
-    "sortspec.md",
-    "未命名.canvas",
-    "数据结构与算法/线性查找.md",
-    "数据结构与算法/冒泡排序.md",
-    "Java/常用类/Java类System.md",
-    "Java/常用类/Java类Arrays.md",
-    "Java/常用类/Java类Math.md",
-    "Java/常用类/Java类StringBuffer和StringBuilder.md",
-    "Java/常用类/Java类String.md",
-    "Java/常用类/Java包装类.md",
-    "Java/面向对象/Java异常.md",
-    "中间件/Elasticsearch/Elasticsearch安装.md",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/ccd96400c18a517c697580e6552b54bb_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/9bd86c3b06ada325c64a7c18a8800b3a_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/9cbe9dadbfe51d6b7fc67b2cdcbe3af9_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/ea912df1c377aec2f730c5609ba97dba_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/c4827885cfc5ec9fc332655484ee97ce_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/4ae787835b2abbae331861670628ffa8_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/a1758ac487b2a91e37c8319f57d20477_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/d8d5923f3547493a96e0c3c4c6f81cd9_MD5.png",
-    "Java/IO流/Java打印流&标准输入输出.md",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/d362c8c667550b64902213e8986d8e3b_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/4de9ab3af88e64cc15180f2860bb017e_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装",
-    "中间件/Elasticsearch/assets",
-    "XML.md",
-    "中间件/Elasticsearch",
-    "容器/Docker/Docker数据卷操作.md",
-    "容器/Docker/assets/Docker数据卷操作",
+    "数据库/MySQL/MySQL操作数据库 DDL.md",
+    "数据库/MySQL/MySQL操作数据 DML.md",
+    "数据库/MySQL/MySQL安装—CentOS.md",
+    "操作系统/Linux/Linux用户管理.md",
+    "操作系统/Linux/Linux常用命令.md",
     "容器/Docker/Docker容器操作.md",
-    "Java/JVM/JVM直接内存.md",
-    "Java/JVM/JVM方法区.md",
-    "Java/JVM/JVM堆.md",
-    "Java/JVM/JVM栈.md",
-    "Git/Git远程仓库.md",
-    "容器/Docker/Docker安装与启动.md",
-    "Git",
-    "Spring/Spring/Spring概述.md",
-    "Spring/Spring/Spring事务管理.md",
-    "Java/新特性/Java8/Java8 Optional类.md",
-    "Java/面向对象/Java泛型.md",
-    "操作系统/Windows/assets",
-    "操作系统/Windows",
-    "操作系统",
-    "操作系统/Linux/assets",
-    "Spring/SpringCloud/assets",
+    "中间件/Redis/Redis数据类型.md",
+    "Java/并发编程/Java关键字synchronized.md",
+    "数据库/MySQL/MySQL事务.md",
+    "数据库/MySQL/MySQL约束.md",
+    "数据库/Oracle/Oracle体系结构.md",
+    "sortspec.md",
+    "Spring/Spring/SpringIOC注解.md",
+    "Spring/SpringBoot 下载网络文件、图片.md",
+    "Spring/SpringCloud/SpringCloudConsul.md",
+    "Spring/SpringCloud/assets/SpringCloudConsul/f5a2d2f7626883801b71c9fe1a8cc255_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/477c9a28541e659fe9f6efafb859f397_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/376691033deec32b603b863cf75519e2_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/20d66621a15f793457f69d0bee1166b0_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/0cfd12c4561cecca73a0cdb4dcc229e3_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/d14e9347faacf1fc4ef6d85668174e2e_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/205e08144f9eb96e2d1296c59c3dcb5e_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/4dd7f2062cfc6442f81dad22cc4f90e0_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/1c96c681512689a7b72b1e38c076d462_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul/0b657dcc3d5f8eb04297b2e5efcf5911_MD5.png",
+    "Spring/SpringCloud/assets/SpringCloudConsul",
+    "Spring/SpringBoot整合RabbitMQ.md",
+    "Spring/SpringBoot整合Redis.md",
+    "Spring/assets/SpringBoot整合RabbitMQ",
+    "中间件/MQ相关概念.md",
+    "中间件/assets/MQ相关概念",
+    "中间件/assets",
+    "中间件/Elasticsearch/Elasticsearch文档操作.md",
+    "中间件/Elasticsearch/Elasticsearch索引库操作.md",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作",
+    "中间件/Elasticsearch/assets/Elasticsearch索引库操作",
+    "中间件/Elasticsearch/Elasticsearch安装.md",
+    "操作系统/Linux/Linux网络配置.md",
+    "操作系统/Linux/assets/Linux网络配置",
+    "操作系统/Linux/Linux磁盘管理.md",
+    "操作系统/Linux/assets/Linux磁盘管理",
+    "操作系统/Linux/Linux任务调度.md",
+    "操作系统/Linux/assets/Linux任务调度",
+    "操作系统/Linux/Linux权限管理.md",
+    "操作系统/Linux/assets/Linux权限管理",
+    "操作系统/Linux/Linux组管理.md",
+    "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "未命名 3.canvas",

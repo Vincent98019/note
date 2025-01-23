@@ -241,7 +241,9 @@ sorting-spec: |-
   assets
   ---
   关系型数据库 & 非关系型数据库
+  范式
   MySQL
+  Oracle
   
   ----------------------------------
   target-folder: 数据库/MySQL
@@ -255,13 +257,57 @@ sorting-spec: |-
   MySQL条件查询 DQL
   MySQL多表查询 DQL
   MySQL用户管理 DCL
-  
+  MySQL约束
+  MySQL常用函数
+  MySQL事务
+  MySQL存储引擎
+  MySQL索引
+  MySQL索引优化
+  MySQL性能分析
+  MySQLSQL优化
+  MySQL视图
+  MySQL存储过程
+  MySQL触发器
+  MySQLInnoDB引擎
 
   ------------------------------------------------------------------
   target-folder: 中间件
+  assets
+  Redis
+  MQ相关概念
   RabbitMQ
+  RocketMQ
   Elasticsearch
+  
+  ----------------------------------
+  target-folder: 中间件/Redis
+  数据类型
+  assets
+  Redis概述&安装
+  Redis数据类型
+  Redis配置文件
+  Redis发布和订阅
+  Redis事务
+  Redis锁
+  Redis持久化-RDB
+  Redis持久化-AOF
+  Redis主从复制
+  Redis集群
+  Redis应用问题解决
+  Redis6.0新功能
 
+  ------------------------
+  target-folder: 中间件/Redis/数据类型
+  assets
+  字符串类型 string
+  列表类型 list
+  集合类型set
+  哈希类型 hash
+  有序集合类型 sortedset
+  Bitmaps
+  HyperLogLog
+  Geospatial
+  
   ----------------------------------
   target-folder: 中间件/RabbitMQ
   assets
@@ -277,9 +323,16 @@ sorting-spec: |-
   RabbitMQ其他知识点
 
   ----------------------------------
+  target-folder: 中间件/RocketMQ
+  assets
+
+
+  ----------------------------------
   target-folder: 中间件/Elasticsearch
   assets
   Elasticsearch安装
+  Elasticsearch索引库操作
+  Elasticsearch文档操作
   
   ------------------------------------------------------------------
   target-folder: 容器
@@ -294,6 +347,7 @@ sorting-spec: |-
   Docker镜像操作
   Docker容器操作
   Docker数据卷操作
+  DockerCompose
 
   ------------------------------------------------------------------
   target-folder: 操作系统
@@ -310,6 +364,11 @@ sorting-spec: |-
   Linux常用命令
   Linux vi和vim编辑器
   Linux用户管理
+  Linux组管理
+  Linux权限管理
+  Linux任务调度
+  Linux磁盘管理
+  Linux网络配置
 
   ----------------------------------
   target-folder: 操作系统/CentOS
