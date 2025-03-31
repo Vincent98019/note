@@ -67,8 +67,8 @@ public class LanguageAspect {
         String lang = request.getHeader("Accept-Language");
         // LocaleContextHolder.setLocale(Locale.forLanguageTag(lang));
         if ("en".equals(lang)) {  
-		    LocaleContextHolder.setLocale(Locale.ENGLISH);  
-		}
+            LocaleContextHolder.setLocale(Locale.ENGLISH);  
+        }
     }
 }
 ```
