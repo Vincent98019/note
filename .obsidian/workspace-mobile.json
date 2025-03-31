@@ -13,10 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring/SpringIOC XML.md",
+                "file": "容器/Docker/DockerCompose.md",
                 "mode": "preview",
                 "source": true
-              }
+              },
+              "icon": "lucide-file",
+              "title": "DockerCompose"
             }
           }
         ]
@@ -35,7 +37,9 @@
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical"
-          }
+          },
+          "icon": "lucide-folder-closed",
+          "title": "文件列表"
         }
       },
       {
@@ -50,7 +54,9 @@
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical"
-          }
+          },
+          "icon": "lucide-search",
+          "title": "搜索"
         }
       },
       {
@@ -61,7 +67,9 @@
           "state": {
             "sortOrder": "frequency",
             "useHierarchy": true
-          }
+          },
+          "icon": "lucide-tags",
+          "title": "标签"
         }
       },
       {
@@ -69,7 +77,9 @@
         "type": "leaf",
         "state": {
           "type": "bookmarks",
-          "state": {}
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "书签"
         }
       }
     ],
@@ -85,7 +95,6 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Spring/SpringIOC XML.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -93,7 +102,9 @@
             "searchQuery": "",
             "backlinkCollapsed": false,
             "unlinkedCollapsed": true
-          }
+          },
+          "icon": "links-coming-in",
+          "title": "反向链接"
         }
       },
       {
@@ -102,10 +113,11 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Spring/SpringIOC XML.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
-          }
+          },
+          "icon": "links-going-out",
+          "title": "出链"
         }
       },
       {
@@ -113,9 +125,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {
-            "file": "Spring/SpringIOC XML.md"
-          }
+          "state": {},
+          "icon": "lucide-list",
+          "title": "大纲"
         }
       }
     ],

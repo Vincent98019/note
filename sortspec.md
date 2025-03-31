@@ -270,6 +270,12 @@ sorting-spec: |-
   MySQL触发器
   MySQLInnoDB引擎
 
+  ----------------------------------
+  target-folder: 数据库/Oracle
+  assets
+  Oracle体系结构
+  Oracle表空间
+
   ------------------------------------------------------------------
   target-folder: 中间件
   assets

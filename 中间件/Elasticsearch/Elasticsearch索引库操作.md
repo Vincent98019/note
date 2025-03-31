@@ -8,14 +8,16 @@
 mapping是对索引库中文档的约束，常见的mapping属性包括：
 
 - **type：** 字段数据类型，常见的简单类型有：
-  - 字符串：`text`（可分词的文本）、`keyword`（精确值，例如：品牌、国家、ip地址）
+  - 字符串：`text`（可分词的文本）、`keyword`（精确值，只整体搜索，不支持搜索部分内容，例如：品牌、国家、ip地址）
   - 数值：`long`、`integer`、`short`、`byte`、`double`、`float`
   - 布尔：`boolean`
   - 日期：`date`
   - 对象：`object`
+  - 地理坐标：`geo_point` （由经度和纬度确定的一个点）、 `geo_shape`（由多个`geo_point` 组成的复杂几何图形，例如直线：`LINSTRING(xxx yyy, xxx yyy)`）
 - **index：** 是否创建索引，默认为true
 - **analyzer：** 使用哪种分词器
 - **properties：** 该字段的子字段
+- **copy_to：** 将当前字段拷贝到指定字段，可以将多个字段拷贝到同一个字段，共同参与搜索
 
 
 

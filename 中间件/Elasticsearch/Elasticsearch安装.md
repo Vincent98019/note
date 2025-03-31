@@ -1,4 +1,3 @@
-## Elasticsearch概述
 
 elasticsearch是一款非常强大的开源搜索引擎，可以从海量数据中快速找到需要的内容。
 
@@ -41,6 +40,7 @@ elasticsearch底层是基于**lucene**来实现的。
 逐行扫描，也就是全表扫描，随着数据量增加，其查询效率也会越来越低。当数据量达到数百万时，就是一场灾难。
 
 ### 倒排索引
+
 倒排索引中有两个非常重要的概念：
 
 - 文档（`Document`）：用来搜索的数据，其中的每一条数据就是一个文档。例如一个网页、一个商品信息
@@ -85,6 +85,7 @@ elasticsearch底层是基于**lucene**来实现的。
   - 无法根据字段做排序
 
 ### es的一些概念
+
 elasticsearch中有很多独有的概念，与mysql中略有差别，但也有相似之处。
 
 #### 文档和字段
@@ -131,38 +132,25 @@ elasticsearch是面向 **文档（Document）** 存储的，可以是数据库�
 
 ## 部署单点es
 
-#### 创建网络
+创建网络：
 
 因为还需要部署kibana容器，让es和kibana容器互联。这里先创建一个网络：
+
 ```bash
-docker network create es-net
+docker network create es-network
 ```
 
-#### 加载镜像
+加载镜像：
 
-采用elasticsearch的7.12.1版本的镜像，这个镜像体积非常大，接近1G。不建议自己pull。将其上传到虚拟机中，然后运行命令加载即可：
 ```bash
-# 导入数据
-docker load -i es.tar
+docker pull elasticsearch:8.15.5
 ```
-同理还有`kibana`的tar包也需要这样做。
 
-#### 运行
 
 运行docker命令，部署单点es：
 
-```sh
-docker run -d \
-	--name es \
-    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
-    -e "discovery.type=single-node" \
-    -v es-data:/usr/share/elasticsearch/data \
-    -v es-plugins:/usr/share/elasticsearch/plugins \
-    --privileged \
-    --network es-net \
-    -p 9200:9200 \
-    -p 9300:9300 \
-elasticsearch:7.12.1
+```bash
+docker run -d --name elasticsearch --net es-network -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:8.15.5
 ```
 
 命令解释：
@@ -178,49 +166,60 @@ elasticsearch:7.12.1
 - `--network es-net` ：加入一个名为es-net的网络中
 - `-p 9200:9200`：端口映射配置
 
-在浏览器中输入：http://192.168.182.128:9200，即可看到elasticsearch的响应结果：
 
-![](assets/Elasticsearch安装/ab2b62cdef1f3af8a678f4328a990a5f_MD5.png)
+
+**密码设置：**
+
+> 官方文档配置密码：https://www.elastic.co/guide/en/elasticsearch/reference/7.12/security-minimal-setup.html#_enable_elasticsearch_security_features
+
+
+```bash
+# 随机生成密码
+./bin/elasticsearch-setup-passwords auto
+
+# 自己设置密码
+./bin/elasticsearch-setup-passwords interactive
+```
+
+> 密码统一设置为：`es1019`
+
+在kibana中使用 `elastic` 登录即可。
+
+
 
 ## 部署kibana
 
 kibana可以给提供一个elasticsearch的可视化界面，便于学习。
 
-#### 部署
 运行docker命令，部署kibana
 
-```sh
-docker run -d \
-	--name kibana \
-	-e ELASTICSEARCH_HOSTS=http://es:9200 \
-	--network=es-net \
-	-p 5601:5601  \
-kibana:7.12.1
+```bash
+docker pull kibana:8.15.5
+docker run -d --name kibana --net es-network -p 5601:5601 kibana:8.15.5
 ```
 
 命令解释：
 
 - `--network es-net` ：加入一个名为es-net的网络中，与elasticsearch在同一个网络中
-- `-e ELASTICSEARCH_HOSTS=http://es:9200"`：设置elasticsearch的地址，因为kibana已经与elasticsearch在一个网络，因此可以用容器名直接访问elasticsearch
 - `-p 5601:5601`：端口映射配置
 
-kibana启动一般比较慢，需要多等待一会，可以通过命令：
 
-```sh
-docker logs -f kibana
+**连接elasticsearch：**
+
+打开kibana的页面：http://127.0.0.1:5601/
+![](assets/Elasticsearch安装/file-20250328132559613.png)
+
+前往elasticsearch的控制台执行命令：
+
+```bash
+bin/elasticsearch-create-enrollment-token --scope kibana
 ```
 
-查看运行日志，当查看到下面的日志，说明成功：
+![](assets/Elasticsearch安装/file-20250328132714667.png)
 
-![](assets/Elasticsearch安装/e0cd211707f476a0d8fc3fe10c2b6379_MD5.png)
+获得token后在kibana的日志中获取验证码验证即可：
 
-#### DevTools
-
-kibana中提供了一个DevTools界面：
-
-![](assets/Elasticsearch安装/753d5920ee6ea1b3f0894e86e3f558f0_MD5.png)
-
-这个界面中可以编写DSL来操作elasticsearch。并且对DSL语句有自动补全功能。
+![](assets/Elasticsearch安装/file-20250328132747904.png)
 
 ## 分词
 
@@ -245,21 +244,19 @@ POST /_analyze
 
 ### 安装IK分词器
 
+分词器官网：https://release.infinilabs.com/analysis-ik/stable/
+
 #### 在线安装ik插件（较慢）
+
 ```bash
 # 进入容器内部
 docker exec -it es /bin/bash
 
 # 在线下载并安装
-./bin/elasticsearch-plugin  install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.12.1/elasticsearch-analysis-ik-7.12.1.zip
-
-#退出
-exit
-#重启容器
-docker restart es
+./bin/elasticsearch-plugin install https://get.infini.cloud/elasticsearch/analysis-ik/8.15.5
 ```
 
-#### 离线安装ik插件（推荐）
+#### 离线安装ik插件
 
 **查看数据卷目录**
 
@@ -272,6 +269,7 @@ docker volume inspect es-plugins
 
 **解压并上传**
 ![](assets/Elasticsearch安装/aa3739e411c12a7d5ac6e0f47d2383ad_MD5.png)
+
 
 **重启容器**
 ```bash

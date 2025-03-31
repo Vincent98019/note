@@ -8,5 +8,6 @@
   "customSortContextSubmenu": true,
   "automaticBookmarksIntegration": true,
   "bookmarksContextMenus": true,
-  "bookmarksGroupToConsumeAsOrderingReference": "sortspec"
+  "bookmarksGroupToConsumeAsOrderingReference": "sortspec",
+  "delayForInitialApplication": 1000
 }
