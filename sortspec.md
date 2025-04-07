@@ -339,6 +339,9 @@ sorting-spec: |-
   Elasticsearch安装
   Elasticsearch索引库操作
   Elasticsearch文档操作
+  ElasticsearchRestAPI
+  Elasticsearch搜索
+  Elasticsearch搜索结果
   
   ------------------------------------------------------------------
   target-folder: 容器

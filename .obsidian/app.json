@@ -1,5 +1,5 @@
 {
-  "livePreview": false,
+  "livePreview": true,
   "showLineNumber": true,
   "trashOption": "system",
   "attachmentFolderPath": "./assets/MySQL基本查询 DQL",
@@ -15,5 +15,6 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "defaultViewMode": "preview"
+  "defaultViewMode": "preview",
+  "focusNewTab": false
 }

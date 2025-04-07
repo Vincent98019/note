@@ -24,24 +24,49 @@
             }
           },
           {
-            "id": "4f2ce707bbaef363",
+            "id": "ff26d929e8ebed4f",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "未命名 3.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "中间件/Elasticsearch/Elasticsearch搜索.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名 3"
+              "icon": "lucide-file",
+              "title": "Elasticsearch搜索"
+            }
+          },
+          {
+            "id": "69558a06167db272",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "中间件/Elasticsearch/Elasticsearch搜索.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Elasticsearch搜索"
+            }
+          },
+          {
+            "id": "7e24095c99a930df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "中间件/Elasticsearch/SSL证书配置.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SSL证书配置"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -148,7 +173,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -160,22 +187,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "中间件/Elasticsearch/Elasticsearch索引库操作.md",
+                "file": "中间件/Elasticsearch/SSL证书配置.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Elasticsearch索引库操作 的大纲"
+              "title": "SSL证书配置 的大纲"
+            }
+          },
+          {
+            "id": "2ed8cc46d4f957f5",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 416.5,
-    "collapsed": true
+    "width": 367.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -191,23 +227,44 @@
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false
     }
   },
-  "active": "4f2ce707bbaef363",
+  "active": "2ed8cc46d4f957f5",
   "lastOpenFiles": [
-    "未命名 3.canvas",
+    "中间件/Elasticsearch/Elasticsearch安装.md",
+    "中间件/Elasticsearch/Elasticsearch文档操作.md",
+    "中间件/Elasticsearch/SSL证书配置.md",
+    "中间件/Elasticsearch/Elasticsearch搜索结果.md",
+    "中间件/Elasticsearch/Elasticsearch搜索.md",
+    "中间件/Elasticsearch/ElasticsearchRestAPI.md",
     "sortspec.md",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250406151714653.png",
+    "中间件/Elasticsearch/assets/MySQL基本查询 DQL",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250406151440890.png",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250404224444885.png",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250404224315396.png",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作/fd5992ced8d662b31a7657bd2dc378c8_MD5.png",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作/e6f9505122c6a38fa97242f2ab170dff_MD5.png",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作/b88f8571dfddb4b82b100b57f2f9d676_MD5.png",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作/b0f0cc82f51ed44a4156bc01da6756d3_MD5.png",
+    "中间件/Elasticsearch/assets/Elasticsearch文档操作/47a661ed6b3ba2b375ac3dd59c0f8af3_MD5.png",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索",
+    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250404231332161.png",
+    "中间件/Elasticsearch/assets/ElasticsearchRestAPI",
+    "内网穿透与 FRP 配置指南.md",
+    "中间件/Elasticsearch/Elasticsearch索引库操作.md",
+    "操作系统/Linux/Linux常用命令.md",
+    "容器/Docker/Docker容器操作.md",
+    "容器/Docker/Docker安装与启动.md",
+    "容器/Docker/Docker镜像操作.md",
+    "操作系统/Linux/Linux磁盘管理.md",
+    "操作系统/SCP.md",
+    "操作系统/CentOS/ContOS7.6安装.md",
     "Spring/SpringBoot/SpringBoot国际化.md",
+    "未命名 3.canvas",
     "Spring/SpringCloud/SpringCloudZookeeper.md",
     "Spring/SpringBoot/assets/SpringBoot整合RabbitMQ",
     "Spring/SpringBoot/assets/SpringBoot 下载网络文件、图片",
     "Spring/SpringBoot/assets",
     "Spring/SpringBoot",
-    "中间件/Elasticsearch/Elasticsearch文档操作.md",
-    "中间件/Elasticsearch/Elasticsearch索引库操作.md",
-    "中间件/Elasticsearch/Elasticsearch安装.md",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/file-20250328132747904.png",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/file-20250328132714667.png",
-    "中间件/Elasticsearch/assets/MySQL基本查询 DQL",
-    "中间件/Elasticsearch/assets/Elasticsearch安装/file-20250328132559613.png",
     "容器/Docker/Docker数据卷操作.md",
     "未命名 2.canvas",
     "Java/面向对象/assets/MySQL基本查询 DQL",
@@ -220,28 +277,8 @@
     "Java/面向对象/Java反射.md",
     "Java/JVM/JVM类加载阶段.md",
     "Java/常用类/Java正则表达式.md",
-    "Java/常用类/Java日期时间类.md",
-    "Java/常用类/Java类String.md",
-    "数据库/MySQL/MySQL常用函数.md",
-    "数据库/MySQL/MySQL基本查询 DQL.md",
-    "数据库/MySQL/MySQL操作表 DDL.md",
-    "中间件/Redis/Redis配置文件.md",
-    "操作系统/Linux/Linux常用命令.md",
-    "数据库/Oracle/Oracle表空间.md",
     "数据库/Oracle/assets/Oracle表空间",
-    "数据库/Oracle/Oracle体系结构.md",
-    "操作系统/Linux/Linux用户管理.md",
-    "操作系统/Linux/Linux组管理.md",
-    "中间件/Redis/assets/Redis集群/89ab39bf49a9d058ad1d11f272a3b3e2_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/f5a2d2f7626883801b71c9fe1a8cc255_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/477c9a28541e659fe9f6efafb859f397_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/376691033deec32b603b863cf75519e2_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/20d66621a15f793457f69d0bee1166b0_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/0cfd12c4561cecca73a0cdb4dcc229e3_MD5.png",
-    "Spring/SpringCloud/assets/SpringCloudConsul/d14e9347faacf1fc4ef6d85668174e2e_MD5.png",
     "Spring/SpringCloud/assets/SpringCloudConsul",
-    "Spring/assets/SpringBoot整合RabbitMQ",
-    "中间件/assets/MQ相关概念",
     "未命名 4.canvas"
   ]
 }
