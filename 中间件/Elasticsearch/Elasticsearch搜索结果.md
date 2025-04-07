@@ -153,7 +153,8 @@ GET /indexName/_search
 }
 ```
 
-> 内部分页时，必须先查询 0~1000条，然后截取其中的990 ~ 1000的这10条。
+> - 内部分页时，必须先查询 0~1000条，然后截取其中的990 ~ 1000的这10条。
+> - 如果要查询第1000条数据，会将集群中每个机器的前1000条数据查出，再进行排序获取结果。
 
 **Elasticsearch 默认最大分页深度为 `from + size <= 10000`，超过需使用：**
 
@@ -165,7 +166,7 @@ GET /indexName/_search
 
 ## 高亮（Highlight）
 
-### 基本语法
+**基本语法：**
 
 ```json
 GET /hotel/_search
@@ -186,37 +187,118 @@ GET /hotel/_search
 }
 ```
 
-### 4.2 注意事项
-- 使用 `match`、`multi_match` 等全文查询才可高亮
-- 高亮字段必须和查询字段一致，若不同需设置 `"require_field_match": false`
+> **注意事项：**
+> 1. 使用 `match`、`multi_match` 等全文查询才可高亮
+> 2. 高亮字段必须和查询字段一致，若不同需设置 `"require_field_match": false`
 
----
+```java
+public void highlightQuery() throws IOException {
+    SearchResponse<Product> response = client.search(s -> s
+        .index("hotel")
+        .query(q -> q.match(m -> m.field("name").query("测试")))
+        .highlight(h -> h
+            .fields("name", f -> f
+                .preTags("<em>")
+                .postTags("</em>")
+            )
+        ),
+        Product.class
+    );
 
-## 5. 聚合（Aggregations）
-
-聚合用于数据的分组统计，类似 SQL 中的 `GROUP BY` 和聚合函数。
-
-### 5.1 桶（Bucket）聚合
-
-```json
-GET /hotel/_search
-{
-  "size": 0,
-  "aggs": {
-    "brandAgg": {
-      "terms": {
-        "field": "brand",
-        "size": 20,
-        "order": {
-          "_count": "desc"
+    response.hits().hits().forEach(hit -> {
+        Product product = hit.source();
+        System.out.println("Product: " + product);
+        if (hit.highlight() != null) {
+            System.out.println("Highlight: " + hit.highlight().get("name"));
         }
-      }
-    }
-  }
+    });
 }
 ```
 
-### 5.2 度量（Metric）聚合
+## 聚合（Aggregations）
+
+聚合用于数据的分组统计，类似 SQL 中的 `GROUP BY` 和聚合函数。
+
+### 桶（Bucket）聚合
+
+用来对文档做分组：
+
+- **TermAggregation**：按照文档字段值分组，例如按照品牌值分组、按照国家分组
+- **Date Histogram**：按照日期阶梯分组，例如一周为一组，或者一月为一组
+
+```json
+GET /hotel/_search
+{
+  // 搜索条件
+  "query": { 
+    "range": {
+      "price": {
+        "lte": 200
+      }
+    }
+  }, 
+  // 设置size为0，结果中不包含查询结果文档，只包含聚合结果
+  "size": 0,
+  
+  // 定义聚合
+  "aggs": {
+    // 聚合名，随便起
+    "brandAgg": {
+      // 聚合的类型，按照品牌值聚合，所以选择terms
+      "terms": {
+        // 参与聚合的字段
+        "field": "brand",
+        "order": {
+          // 排序
+          "doc_count": "asc"
+        },
+        // 希望获取的聚合结果数量
+        "size": 20 
+      }
+    }
+  }
+}
+```
+
+```java
+public void bucketAggregation() throws IOException {
+    SearchResponse<Void> response = client.search(s -> s
+        .index("hotel")
+        .size(0) // 不返回文档，只要聚合结果
+        .query(q -> q
+            .range(r -> r
+                .field("price")
+                .lte(JsonData.of(200))
+            )
+        )
+        .aggregations("brandAgg", a -> a
+            .terms(t -> t
+                .field("brand")
+                .order(o -> o
+                    .key("doc_count")
+                    .order(SortOrder.Asc)
+                )
+                .size(20)
+            )
+        ),
+        Void.class // 不需要文档内容
+    );
+
+    // 打印聚合结果
+    Aggregate brandAgg = response.aggregations().get("brandAgg");
+    if (brandAgg.isSterms()) {
+        brandAgg.sterms().buckets().array().forEach(bucket -> {
+            System.out.println("品牌: " + bucket.key().stringValue());
+            System.out.println("数量: " + bucket.docCount());
+        });
+    }
+}
+```
+
+### 度量（Metric）聚合
+
+> 度量聚合很少单独使用，一般是和桶聚合一并结合使用
+
 统计字段最大、最小、平均等：
 
 ```json
@@ -226,15 +308,16 @@ GET /hotel/_search
   "aggs": {
     "brandAgg": {
       "terms": {
-        "field": "brand",
-        "size": 20,
+        "field": "brand",        // 按照 brand 字段分组（即按品牌分组）
+        "size": 20,              // 最多返回前 20 个品牌
         "order": {
-          "score_stats.avg": "desc"
+          "score_stats.avg": "desc"  // 按每个品牌的平均评分降序排序
         }
       },
       "aggs": {
         "score_stats": {
           "stats": {
+            // 对每个品牌分组下的 score 字段做统计（最大、最小、平均、总和、数量）
             "field": "score"
           }
         }
@@ -244,30 +327,46 @@ GET /hotel/_search
 }
 ```
 
-### 5.3 管道（Pipeline）聚合
-可对已有聚合结果再聚合，例如对 avg 值求 max 等。
+```java
+public void brandScoreStatsAggregation() throws IOException {
+    SearchResponse<Void> response = client.search(s -> s
+        .index("hotel")
+        .size(0) // 不返回文档，只聚合结果
+        .aggregations("brandAgg", a -> a
+            .terms(t -> t
+                .field("brand")
+                .size(20)
+                .order(o -> o
+                    .key("score_stats.avg")
+                    .order(SortOrder.Desc)
+                )
+            )
+            .aggregations("score_stats", subAgg -> subAgg
+                .stats(st -> st
+                    .field("score")
+                )
+            )
+        ), Void.class);
 
----
+    // 解析结果
+    TermsAggregate brandAgg = response.aggregations().get("brandAgg").terms();
+    for (TermsBucket bucket : brandAgg.buckets().array()) {
+        String brand = bucket.key().stringValue();
+        long docCount = bucket.docCount();
 
-## 6. 建议补充
+        StatsAggregate stats = bucket.aggregations().get("score_stats").stats();
+        double avg = stats.avg();
+        double min = stats.min();
+        double max = stats.max();
+        double sum = stats.sum();
+        long count = stats.count();
 
-### 6.1 聚合 + 查询范围联动
-聚合前加上查询条件可限制参与聚合的数据：
-
-```json
-"query": {
-  "range": {
-    "price": {
-      "lte": 200
+        System.out.printf("品牌: %s, 数量: %d, 平均分: %.2f, 最低: %.2f, 最高: %.2f, 总分: %.2f\n",
+                brand, docCount, avg, min, max, sum);
     }
-  }
 }
 ```
 
-### 6.2 聚合字段类型限制
-只支持 `keyword`、数值、布尔、日期字段聚合，不支持 `text` 字段。
+### 管道（Pipeline）聚合
 
----
-
-如需更多示例（如聚合+分页混用、Java DSL 转换）可以继续补充。
-
+参考上述代码，可对已有聚合结果再聚合，例如对 avg 值求 max 等。

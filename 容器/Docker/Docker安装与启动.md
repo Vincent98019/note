@@ -135,23 +135,15 @@ sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/li
 apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-> 配置用户组（可选）：
-> 
+**配置用户组（可选）：**
+
 > 默认情况下，只有root用户和docker组的用户才能运行Docker命令。可以将当前用户添加到docker组，以避免每次使用Docker时都需要使用sudo。命令如下：
-> 
-> ```bash
-> sudo usermod -aG docker $USER
-> ```
-> 
-> 重新登录使更改生效
-
-**第五步**
-
-安装工具
 
 ```bash
-sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+sudo usermod -aG docker $USER
 ```
+
+> 重新登录使更改生效
 
 
 ## 启动&停止
@@ -190,43 +182,57 @@ sudo systemctl enable docker
 > 如果是WSL系统，可以使用 `service docker start` 启动Docker，其他命令同理。
 
 
-
-## 配置阿里云镜像
+## 配置国内镜像地址
 
 **第一步**
 
-进入阿里云，点击**容器镜像服务**
+配置DNS：
 
-![](assets/Docker安装与启动/image-20240424170854592.png)
+```bash
+sudo vim /etc/resolv.conf
+```
+
+添加源：
+
+```bash
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+```
 
 
 **第二步**
 
-点击镜像加速器
+编辑 `daemon.json` 文件：
 
-![](assets/Docker安装与启动/image-20240424170908454.png)
+```bash
+sudo vim /etc/docker/daemon.json
+```
+
+添加：
+
+```json
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io",
+        "https://dockerproxy.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://docker.nju.edu.cn",
+        "https://iju9kaj2.mirror.aliyuncs.com",
+        "http://hub-mirror.c.163.com",
+        "https://cr.console.aliyun.com",
+        "https://hub.docker.com",
+        "http://mirrors.ustc.edu.cn"
+    ]
+}
+
+```
 
 
 **第三步**
 
-选择CentOS，执行下面的命令即可
-
-> 这里CentOS与Ubuntu的命令是一样的
-
-![](assets/Docker安装与启动/image-20240424170922551.png)
-
+重启Docker服务：
 
 ```bash
-# 创建一个文件夹
-sudo mkdir -p /etc/docker
-# 将镜像地址写入到json文件中
-sudo tee /etc/docker/daemon.json <<-'EOF'
-{
-  "registry-mirrors": ["https://xctue5uq.mirror.aliyuncs.com"]
-}
-EOF
-# 重新加载命令
 sudo systemctl daemon-reload
-# 重启docker
 sudo systemctl restart docker
 ```
