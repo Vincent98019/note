@@ -1,5 +1,4 @@
 
-## synchronized原理
 
 以下面代码为例，分析字节码：
 
@@ -88,11 +87,11 @@ public static void method2() {
 
 1. 创建锁记录(Lock Record)对象，每个线程的栈帧都会包含一个锁记录的结构，内部可以存储锁定对象的Mark Word
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614175255797.png)
+![](assets/Java原理synchronized/image-20240614175255797.png)
 
 2. 让锁记录中 Object reference 指向锁对象，并尝试用 cas 替换 Object 的 Mark Word，将 Mark Word 的值存入锁记录
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614175203456.png)
+![](assets/Java原理synchronized/image-20240614175203456.png)
 
 
 
@@ -100,7 +99,7 @@ public static void method2() {
 
 > 白话理解就是：当要锁一个对象时，线程中的一个标记会和锁对象的对象头中的 Mark Word 标记互换，如果换成功了，就能标记出这个对象被哪个线程使用，而 Mark Word 此时的状态是 00， [Mark Word](Java原理Monitor.md###Mark%20Word) 图中的倒数第三行的状态。
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614175353443.png)
+![](assets/Java原理synchronized/image-20240614175353443.png)
 
 
 4. 如果 cas 替换失败，有两种情况
@@ -110,7 +109,7 @@ public static void method2() {
 > 这里第一种情况先不考虑，锁膨胀的介绍在下面
 > 第二种情况的锁重入的情况，不会发生 cas 替换，因为会发现锁对象已经在自己的线程中了，所以值为 null
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614175417546.png)
+![](assets/Java原理synchronized/image-20240614175417546.png)
 
 5. 当退出 synchronized 代码块(解锁时)，如果锁记录的值不为 null，这时使用 cas 将 Mark Word 的值恢复给对象头
    1. 成功：则解锁成功
@@ -118,7 +117,7 @@ public static void method2() {
 
 > 如果锁记录的值为 null，就是在 method2 方法释放锁时，不会真的释放锁，因为他的值为 null，没办法发生交换，当 method1 释放锁时，他不是 null ，就通过 cas 替换，将锁对象的对象头恢复成原来的状态。
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614175440963.png)
+![](assets/Java原理synchronized/image-20240614175440963.png)
 
 
 ## 锁膨胀
@@ -137,7 +136,7 @@ public static void method1() {
 
 1. 当 Thread-1 进行轻量级加锁时，Thread-0 已经对该锁对象加了轻量级锁
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614181418351.png)
+![](assets/Java原理synchronized/image-20240614181418351.png)
 
 2. 这时 Thread-1 加轻量级锁失败，进入锁膨胀流程
    1. 为 Object 对象申请 Monitor 锁，让 Object 指向重量级锁地址
@@ -145,7 +144,7 @@ public static void method1() {
 
 > 可以看作，线程1拿不到轻量级锁，就找JVM申请 Monitor 锁(系统级的)，锁对象的地址和 Monitor 对象的地址再“互换“，然后线程1进入阻塞状态，等待锁被释放
 
-![](Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/assets/%E6%9C%AA%E5%91%BD%E5%90%8D%201/image-20240614181434630.png)
+![](assets/Java原理synchronized/image-20240614181434630.png)
 
 
 3. 当 Thread-0 退出同步块解锁时，使用 cas 将 Mark Word 的值恢复给对象头失败。这时会进入重量级解锁流程，即按照 Monitor 地址找到 Monitor 对象，设置 Owner 为 null，唤醒 EntryList 中 BLOCKED 线程
@@ -163,24 +162,21 @@ public static void method1() {
 * 在 Java 6 之后自旋锁是自适应的，比如对象刚刚的一次自旋操作成功过，那么认为这次自旋成功的可能性会高，就多自旋几次；反之，就少自旋甚至不自旋，总之，比较智能。
 * Java 7 之后不能控制是否开启自旋功能。
 
-
-
 自旋重试成功的情况：
 
-|线程 1 （core 1 上）|对象 Mark|线程 2 （core 2 上）|
-| ----- | ----- | ----- |
-|\-|10（重量锁）|\-|
-|访问同步块，获取 monitor|10（重量锁）重量锁指针|\-|
-|成功（加锁）|10（重量锁）重量锁指针|\-|
-|执行同步块|10（重量锁）重量锁指针|\-|
-|执行同步块|10（重量锁）重量锁指针|访问同步块，获取 monitor|
-|执行同步块|10（重量锁）重量锁指针|自旋重试|
-|执行完毕|10（重量锁）重量锁指针|自旋重试|
-|成功（解锁）|01（无锁）|自旋重试|
-|\-|10（重量锁）重量锁指针|成功（加锁）|
-|\-|10（重量锁）重量锁指针|执行同步块|
-|\-|...|...|
-
+| 线程 1 （core 1 上）  | 对象 Mark      | 线程 2 （core 2 上）  |
+| ---------------- | ------------ | ---------------- |
+| \-               | 10（重量锁）      | \-               |
+| 访问同步块，获取 monitor | 10（重量锁）重量锁指针 | \-               |
+| 成功（加锁）           | 10（重量锁）重量锁指针 | \-               |
+| 执行同步块            | 10（重量锁）重量锁指针 | \-               |
+| 执行同步块            | 10（重量锁）重量锁指针 | 访问同步块，获取 monitor |
+| 执行同步块            | 10（重量锁）重量锁指针 | 自旋重试             |
+| 执行完毕             | 10（重量锁）重量锁指针 | 自旋重试             |
+| 成功（解锁）           | 01（无锁）       | 自旋重试             |
+| \-               | 10（重量锁）重量锁指针 | 成功（加锁）           |
+| \-               | 10（重量锁）重量锁指针 | 执行同步块            |
+| \-               | ...          | ...              |
 
 
 自旋重试失败的情况：
@@ -199,8 +195,8 @@ public static void method1() {
 |\-|...|...|
 
 
+## 偏向锁
 
-#### 偏向锁
 轻量级锁在没有竞争时（就自己这个线程），每次重入仍然需要执行 CAS 操作。
 
 Java 6 中引入了偏向锁来做进一步优化：只有第一次使用 CAS 将线程 ID 设置到对象的 Mark Word 头，之后发现这个线程 ID 是自己的就表示没有竞争，不用重新 CAS。以后只要不发生竞争，这个对象就归该线程所有。
@@ -229,13 +225,13 @@ public static void m3() {
     }
 }
 ```
-![image](images/qeFFc5bSd9fRivypfcIDt_fpz5dbA7iS9uQyws4GIik.png)
 
-![image](images/n1-JVL3lhIYKLF9KQkuxnLzmk99hgcPKHlRBc1xLkQ0.png)
+![](assets/Java原理synchronized/file-20250409211321290.png)
 
+![](assets/Java原理synchronized/file-20250409211334997.png)
 
+### 偏向状态
 
-##### 偏向状态
 回忆一下对象头格式
 
 ```ruby
@@ -253,6 +249,7 @@ public static void m3() {
 |                                                               | 11 |    Marked for GC   |
 |--------------------------------------------------------------------|--------------------|
 ```
+
 一个对象创建时：
 
 * 如果开启了偏向锁（默认开启），那么对象创建后，markword 值为 0x05 即最后 3 位为 101，这时它的thread、epoch、age 都为 0
@@ -261,12 +258,12 @@ public static void m3() {
 
 代码运行时在添加 VM 参数 `-XX:-UseBiasedLocking` 禁用偏向锁。
 
+### 测试延迟特性
 
-
-###### 测试延迟特性
 ```java
 class Dog {}
 ```
+
 利用 jol 第三方工具来查看对象头信息（注意这里我扩展了 jol 让它输出更为简洁）
 
 ```java
@@ -289,6 +286,7 @@ public static void main(String[] args) throws IOException {
     }, "t1").start();
 }
 ```
+
 输出：
 
 ```java
@@ -304,11 +302,11 @@ public static void main(String[] args) throws IOException {
 // 释放锁后，对象没有变化，还是偏向t1线程的偏向锁
 00000000 00000000 00000000 00000000 00011111 11101011 11010000 00000101
 ```
+
 > 处于偏向锁的对象解锁后，线程 id 仍存储于对象头中
 
+### 测试禁用
 
-
-###### 测试禁用
 在上面测试代码运行时在添加 VM 参数 `-XX:-UseBiasedLocking` 禁用偏向锁
 
 输出：
@@ -328,13 +326,14 @@ public static void main(String[] args) throws IOException {
 ```
 
 
-###### 测试 hashCode
-正常状态对象一开始是没有 hashCode 的，第一次调用才生成
+### 测试 hashCode
+
+正常状态对象一开始是没有 hashCode 的，第一次调用才生成。
 
 
+## 偏向锁撤销
+### 调用对象 hashCode
 
-##### 偏向锁撤销
-###### 调用对象 hashCode
 调用了对象的 hashCode，但偏向锁的对象 MarkWord 中存储的是线程 id，如果调用 hashCode 会导致偏向锁被撤销
 
 轻量级锁会在锁记录中记录 hashCode，重量级锁会在 Monitor 中记录 hashCode
@@ -360,7 +359,8 @@ public static void main(String[] args) throws IOException {
 ```
 
 
-###### 其它线程使用对象
+### 其它线程使用对象
+
 当有其它线程使用偏向锁对象时，会将偏向锁升级为轻量级锁
 
 ```java
@@ -396,6 +396,7 @@ private static void test2() throws InterruptedException {
     t2.start();
 }
 ```
+
 输出：
 
 ```java
@@ -411,7 +412,8 @@ private static void test2() throws InterruptedException {
 ```
 
 
-###### 调用 wait/notify
+### 调用 wait/notify
+
 ```java
 public static void main(String[] args) throws InterruptedException {
     Dog d = new Dog();
@@ -442,6 +444,7 @@ public static void main(String[] args) throws InterruptedException {
     }, "t2").start();
 }
 ```
+
 输出：
 
 ```java
@@ -455,7 +458,8 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 
-##### 批量重偏向
+### 批量重偏向
+
 如果对象虽然被多个线程访问，但没有竞争，这时偏向了线程 T1 的对象仍有机会重新偏向 T2，重偏向会重置对象的 Thread ID
 
 当撤销偏向锁阈值超过 20 次后，jvm 会这样觉得，我是不是偏向错了呢，于是会在给这些对象加锁时重新偏向至加锁线程
@@ -563,7 +567,8 @@ private static void test3() throws InterruptedException {
 ```
 
 
-##### 批量撤销
+### 批量撤销
+
 当撤销偏向锁阈值超过 40 次后，jvm 会这样觉得，自己确实偏向错了，根本就不该偏向。于是整个类的所有对象都会变为不可偏向的，新建的对象也是不可偏向的
 
 ```java
@@ -615,8 +620,8 @@ private static void test4() throws InterruptedException {
     log.debug(ClassLayout.parseInstance(new Dog()).toPrintableSimple(true));
 }
 ```
-结论：
 
+结论：
 1. t1线程执行后，所有的锁对象都会偏向t1线程
 2. 开始执行t2线程，当执行到第20个对象时，会批量重偏向为t2线程(此时和上面一个案例一样)
 3. 开始执行t3线程，因为前面19个对象在执行t2线程后，已经被置为了无锁状态(001不可偏向)，t3线程使用前面19个锁对象时，锁对象的状态为：无锁 -> 轻量级锁 -> 无锁，第20个及之后，锁对象的状态为：偏向锁t2 -> 轻量级锁 -> 无锁(不可偏向)，此时所有的锁都变为了不可偏向的无锁状态
@@ -636,7 +641,8 @@ private static void test4() throws InterruptedException {
 
 
 
-#### 锁消除
+## 锁消除
+
 ```java
 @Fork(1)
 @BenchmarkMode(Mode.AverageTime)
@@ -658,6 +664,7 @@ public class MyBenchmark {
     }
 }
 ```
+
 打成jar包，运行 `java -jar benchmarks.jar`  ，结果：
 
 ```java
@@ -665,9 +672,8 @@ Benchmark             Mode     Samples     Score     Score error     Units
 c.i.MyBenchmark.a     avgt     5           1.542     0.056           ns/op 
 c.i.MyBenchmark.b     avgt     5           1.518     0.091           ns/op
 ```
+
 可以看到两个方法消耗的时间差距并不是很大，几乎没有，这是因为做了锁消除优化，o对象不可能被其他线程竞争阻塞，JIT即时编译器在编译时将同步代码块直接去掉，所以两个方法都只是进行了x++的操作，没有进行锁的操作。
-
-
 
 使用jvm参数运行jar包，不使用锁消除，`java -XX:-EliminateLocks -jar benchmarks.jar` ，结果：
 
@@ -678,7 +684,6 @@ c.i.MyBenchmark.b     avgt     5           16.976    1.572           ns/op
 ```
 b方法的运行速度变慢了很多，没有锁消除，就会进行锁的操作，比较耗时。
 
+## 锁粗化
 
-
-#### 锁粗化
 对相同对象多次加锁，导致线程发生多次重入，可以使用锁粗化方式来优化，这不同于之前讲的细分锁的粒度。

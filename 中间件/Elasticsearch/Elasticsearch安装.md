@@ -250,7 +250,7 @@ POST /_analyze
 
 ```bash
 # 进入容器内部
-docker exec -it es /bin/bash
+docker exec -it elasticsearch /bin/bash
 
 # 在线下载并安装
 ./bin/elasticsearch-plugin install https://get.infini.cloud/elasticsearch/analysis-ik/8.15.5

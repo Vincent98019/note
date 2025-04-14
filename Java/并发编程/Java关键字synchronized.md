@@ -130,9 +130,8 @@ class Room {
 
 ### 方法上的synchronized
 
-如果在普通方法上加synchronized，锁的是this对象
-
-如果是在static方法上加synchronized，锁的是当前类的Class类对象
+- 如果在普通方法上加synchronized，锁的是this对象
+- 如果是在static方法上加synchronized，锁的是当前类的Class类对象
 
 ```java
 class Test {  
@@ -140,8 +139,7 @@ class Test {
   
     }  
 }  
-等价于  
-  
+// 等价于  
 class Test {  
     public void test() {  
         synchronized (this) {  
