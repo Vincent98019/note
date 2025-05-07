@@ -1,5 +1,6 @@
 {
   "accentColor": "",
   "enabledCssSnippets": [],
-  "translucency": false
+  "translucency": false,
+  "nativeMenus": true
 }

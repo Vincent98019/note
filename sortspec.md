@@ -6,14 +6,23 @@ sorting-spec: |-
   ---
   Java
   Spring
+  MyBatis
   ---
-  数据库
-  中间件
+  MySQL
+  Oracle
+  Redis
+  Elasticsearch
+  RabbitMQ
+  RocketMQ
   ---
+  Docker
+  Linux
+  ---
+  Git
+  ---
+  Zookeeper
   操作系统
-  容器
-  
-  
+
 
   ------------------------------------------------------------------
   target-folder: Java
@@ -27,14 +36,13 @@ sorting-spec: |-
   IO流
   并发编程
   网络编程
-  ---
-  JDBC
-  JavaWeb
-  ---
   JVM
   ---
   新特性
   错误集锦
+  ---
+  JDBC
+  JavaWeb
 
   ------------------------------------------
   target-folder: Java/基础
@@ -96,14 +104,14 @@ sorting-spec: |-
   target-folder: Java/集合
   assets
   ---
-  Java Collection
-  Java List
-  Java Set
-  Java Map
-  Java Properties
-  Java TreeSet & TreeMap
-  Java Collections
-  Java Comparable & Comparator
+  JavaCollection
+  JavaList
+  JavaSet
+  JavaMap
+  JavaProperties
+  JavaTreeSet和TreeMap
+  JavaCollections
+  JavaComparable和Comparator
   
   ------------------------------------------
   target-folder: Java/IO流
@@ -125,11 +133,17 @@ sorting-spec: |-
   Java进程与线程
   Java创建线程
   Java线程常见方法
-  Java线程的生命周期
+  终止模式：两阶段终止模式
   Java守护线程
+  Java线程的生命周期
   Java关键字synchronized
-  Java原理Monitor
   Java原理synchronized
+  Java原理wait&notify&join
+  同步模式：保护性暂停
+  异步模式：生产者&消费者
+  Java原理park&unpark
+  Java锁的活跃性
+  JavaReentrantLock
   
   ------------------------------------------
   target-folder: Java/网络编程
@@ -138,21 +152,7 @@ sorting-spec: |-
   Java网络通信
   Java类Socket
   JavaTCP文件上传
-
-  ------------------------------------------
-  target-folder: Java/JavaWeb
-  assets
-  Java XML
-  Java Tomcat
-  Java Servlet
-  Java JSP
-  Java Request
-  Java Response
-  Java Cookie
-  Java Session
-  Java Filter
-  Java Listener
-
+  
   ------------------------------------------
   target-folder: Java/JVM
   assets
@@ -172,7 +172,7 @@ sorting-spec: |-
   target-folder: Java/新特性
   assets
   Java8
-  
+
   ----------------------------
   target-folder: Java/新特性/Java8
   assets
@@ -186,6 +186,20 @@ sorting-spec: |-
   target-folder: Java/错误集锦
   assets
   编码GBK的不可映射字符
+  
+  ------------------------------------------
+  target-folder: Java/JavaWeb
+  assets
+  Java XML
+  Java Tomcat
+  Java Servlet
+  Java JSP
+  Java Request
+  Java Response
+  Java Cookie
+  Java Session
+  Java Filter
+  Java Listener
 
   ------------------------------------------------------------------
   target-folder: Spring
@@ -246,7 +260,7 @@ sorting-spec: |-
   Oracle
   
   ----------------------------------
-  target-folder: 数据库/MySQL
+  target-folder: MySQL
   assets
   MySQL安装—CentOS
   MySQL安装—Win10

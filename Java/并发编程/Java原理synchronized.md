@@ -1,4 +1,53 @@
 
+## Java对象头
+
+以32位虚拟机为例：
+
+### 普通对象
+
+对象头是64位，也就是8个字节，其中4字节为 Mark Word (包含很多信息)，另外4字节为 Klass Word (指向对象的Class)
+
+![](assets/Java原理synchronized/2012rZIJG5S-3EALVcoONHhtH4bQqt0r1swaHLieLnQ.png)
+
+
+### 数组对象
+
+![](assets/Java原理synchronized/UBS-2j_xfoJfb4CVnEXq_s8_6oQ9aZhLmfsTfFMwIK4.png)
+
+### Mark Word
+
+![](assets/Java原理synchronized/2g7P3YxX6o6l2l54G1e8HfWrmrm41swLhxDaa04kUbA.png)
+
+
+![](assets/Java原理synchronized/file-20250503195204118.png)
+64位虚拟机和32位的虚拟机结构不一样
+
+参考资料：[https://stackoverflow.com/questions/26357186/what-is-in-java-object-header](https://stackoverflow.com/questions/26357186/what-is-in-java-object-header)
+
+
+
+## Monitor(锁)
+
+Monitor 被翻译为 **监视器** 或 **管程**
+
+每个Java对象都可以关联一个Monitor对象(系统底层的对象)，如果使用 `synchronized` 给对象上锁(重量级)之后，该对象头的 Mark Word 中就被设置指向 Monitor 对象的指针。
+
+Monitor结构如下：
+
+![](assets/Java原理synchronized/5hnqNGDAzIUOibO7KEtcKWyc6IqLpCWM-f7j8PqUjJQ.png)
+
+1. 当执行到 `synchronized`  时，会将上锁的对象关联到 Monitor对象，这时的Mark Word状态会变成重量级(上上图的倒数第二行的状态)
+2. 刚开始的 Monitor 中的 Owner 为 null
+3. 当 Thread-2 执行到 `synchronized(obj)`  时，会将 Monitor的所有者 Owner 置为 Thread-2，一个 Monitor 中只有一个 Owner
+4. 在上锁的过程中，如果 Thread-3、Thread-4、Thread-5 也来执行 `synchronized(obj)`  ，就会进入 `EntryList` (链表结构) 进行阻塞(BLOCKED)
+5. Thread-2 执行完同步代码块中的内容后，EntryList 中等待的线程会被唤醒竞争锁(竞争是非公平的)
+6. WaitSet 中的 Thread-0、Thread-1 是之前获得过锁，但条件不满足进入 WAITING 状态的线程(跟wait、notify有关)
+
+> synchronized 必须是进入同一个对象的 Monitor 才有上述效果，不加 synchronized 的对象不会关联监视器，不遵从以上规则
+
+
+## synchronized原理
+
 
 以下面代码为例，分析字节码：
 
@@ -21,27 +70,27 @@ public static void main(String[] args) {
     flags: ACC_PUBLIC, ACC_STATIC
     Code:
       stack=2, locals=3, args_size=1
-         0: getstatic     #2                  // lock对象引用(synchronized开始)
-         3: dup                               // 复制一份用于释放
-         4: astore_1                          // lock引用 -> slot1 (把lock的引用指向释放时的对象)
-         5: monitorenter                      // 将lock对象MarkWord置为Monitor指针
-         6: getstatic     #3                  // 获取i
-         9: iconst_1                          // 准备常数 1
-        10: iadd                              // +1
-        11: putstatic     #3                  // 赋值给i
-        14: aload_1                           // 拿到lock的引用
-        15: monitorexit                       // 将lock对象MarkWord重置(恢复成原来的样子)，唤醒EntryList
-        16: goto          24                  // 如果没异常的话执行第24条命令，return
-        19: astore_2                          // 如果出了异常，将异常赋值给slot2
-        20: aload_1                           // 拿到lock的引用
-        21: monitorexit                       // 将lock对象MarkWord重置(恢复成原来的样子)，唤醒EntryList
-        22: aload_2                           // 拿到异常的引用
-        23: athrow                            // 将异常抛出
+         0: getstatic     #2       // lock对象引用(synchronized开始)
+         3: dup                    // 复制一份用于释放
+         4: astore_1        // lock引用 -> slot1 (把lock的引用指向释放时的对象)
+         5: monitorenter           // 将lock对象MarkWord置为Monitor指针
+         6: getstatic     #3       // 获取i
+         9: iconst_1               // 准备常数 1
+        10: iadd                   // +1
+        11: putstatic     #3       // 赋值给i
+        14: aload_1                // 拿到lock的引用
+        15: monitorexit       // 将lock对象MarkWord重置(恢复成原来的样子)，唤醒EntryList
+        16: goto          24      // 如果没异常的话执行第24条命令，return
+        19: astore_2              // 如果出了异常，将异常赋值给slot2
+        20: aload_1               // 拿到lock的引用
+        21: monitorexit        // 将lock对象MarkWord重置(恢复成原来的样子)，唤醒EntryList
+        22: aload_2               // 拿到异常的引用
+        23: athrow                // 将异常抛出
         24: return
       Exception table:
          from    to  target type
-             6    16    19   any               // 第6-16行指令发生异常，就执行第19行指令
-            19    22    19   any               // 第19-22行指令发生异常，就执行第19行指令
+             6    16    19   any   // 第6-16行指令发生异常，就执行第19行指令
+            19    22    19   any   // 第19-22行指令发生异常，就执行第19行指令
       LineNumberTable:
         line 9: 0
         line 10: 6
@@ -58,6 +107,7 @@ public static void main(String[] args) {
         frame_type = 250 /* chop */
           offset_delta = 4
 ```
+
 
 
 ## 轻量级锁
@@ -89,7 +139,7 @@ public static void method2() {
 
 ![](assets/Java原理synchronized/image-20240614175255797.png)
 
-2. 让锁记录中 Object reference 指向锁对象，并尝试用 cas 替换 Object 的 Mark Word，将 Mark Word 的值存入锁记录
+2. 让锁记录中 Object reference 指向锁对象，并尝试用 CAS 替换 Object 的 Mark Word，将 Mark Word 的值存入锁记录
 
 ![](assets/Java原理synchronized/image-20240614175203456.png)
 
@@ -97,32 +147,34 @@ public static void method2() {
 
 3. 如果 cas 替换成功，对象头存储了 **锁记录地址和状态 00**， 表示由该线程给对象加锁
 
-> 白话理解就是：当要锁一个对象时，线程中的一个标记会和锁对象的对象头中的 Mark Word 标记互换，如果换成功了，就能标记出这个对象被哪个线程使用，而 Mark Word 此时的状态是 00， [Mark Word](Java原理Monitor.md###Mark%20Word) 图中的倒数第三行的状态。
+> 白话理解就是：当要锁一个对象时，线程中的一个标记会和锁对象的对象头中的 Mark Word 标记互换，如果换成功了，就能标记出这个对象被哪个线程使用，而 Mark Word 此时的状态是 00， [Mark Word](###Mark%20Word) 图中的**倒数第三行的状态**。
 
 ![](assets/Java原理synchronized/image-20240614175353443.png)
 
 
-4. 如果 cas 替换失败，有两种情况
-   1. 如果其他线程已经持有了该 Object 的轻量级锁，说明有锁的竞争，进入锁膨胀阶段
-   2. 如果是自己执行了 synchronized 锁重入(就是本节示例代码的method2方法中的锁)，那么会再添加一条 Lock Record 作为重入的计数
+4. 如果 CAS 替换失败，有两种情况
+	1. 如果其他线程已经持有了该 Object 的轻量级锁，说明有锁的竞争，进入[锁膨胀](##锁膨胀)阶段
+	2. 如果是自己执行了 synchronized **锁重入**(就是本节示例代码的method2方法中的锁)，那么会再添加一条 Lock Record 作为重入的计数
 
 > 这里第一种情况先不考虑，锁膨胀的介绍在下面
 > 第二种情况的锁重入的情况，不会发生 cas 替换，因为会发现锁对象已经在自己的线程中了，所以值为 null
+> 
+> **锁重入**：当前线程加锁后，再使用同样的对象加锁，重入后会计数，解锁后会减1
 
 ![](assets/Java原理synchronized/image-20240614175417546.png)
 
-5. 当退出 synchronized 代码块(解锁时)，如果锁记录的值不为 null，这时使用 cas 将 Mark Word 的值恢复给对象头
-   1. 成功：则解锁成功
-   2. 失败：说明轻量级锁进行了锁膨胀或已经升级为重量级锁，进入重量级锁的解锁流程
+5. 当退出 synchronized 代码块(解锁时)，如果锁记录的值不为 null，这时使用 CAS 将 Mark Word 的值恢复给对象头
+	1. 成功：则解锁成功
+	2. 失败：说明轻量级锁进行了锁膨胀或已经升级为重量级锁，进入重量级锁的解锁流程
 
-> 如果锁记录的值为 null，就是在 method2 方法释放锁时，不会真的释放锁，因为他的值为 null，没办法发生交换，当 method1 释放锁时，他不是 null ，就通过 cas 替换，将锁对象的对象头恢复成原来的状态。
+> 在 method2 方法释放锁时，如果锁记录的值为 null，没办法发生交换，不会真的释放锁，当 method1 释放锁时，锁记录的值不为 null ，就通过 CAS 替换，将锁对象的对象头恢复成原来的状态。
 
 ![](assets/Java原理synchronized/image-20240614175440963.png)
 
 
 ## 锁膨胀
 
-如果在尝试加轻量级锁的过程中， CAS 操作无法成功，说明已经有其他线程对锁对象加上了轻量级锁(有竞争)，这时需要进行锁膨胀，将轻量级锁变为重量级锁。
+如果在尝试加轻量级锁的过程中， CAS 操作无法成功，说明已经有其他线程对锁对象加上了轻量级锁(有竞争)，这时需要进行锁膨胀，**将轻量级锁变为重量级锁**。
 
 ```java
 static Object obj = new Object();
@@ -139,8 +191,8 @@ public static void method1() {
 ![](assets/Java原理synchronized/image-20240614181418351.png)
 
 2. 这时 Thread-1 加轻量级锁失败，进入锁膨胀流程
-   1. 为 Object 对象申请 Monitor 锁，让 Object 指向重量级锁地址
-   2. 然后自己进入 Monitor 的 EntryList 中 BLOCKED
+	1. 为 Object 对象申请 [Monitor锁](##Monitor(锁)) ，让 Object 指向重量级锁地址
+	2. 然后自己进入 Monitor 的 EntryList 中 BLOCKED
 
 > 可以看作，线程1拿不到轻量级锁，就找JVM申请 Monitor 锁(系统级的)，锁对象的地址和 Monitor 对象的地址再“互换“，然后线程1进入阻塞状态，等待锁被释放
 
@@ -150,8 +202,7 @@ public static void method1() {
 3. 当 Thread-0 退出同步块解锁时，使用 cas 将 Mark Word 的值恢复给对象头失败。这时会进入重量级解锁流程，即按照 Monitor 地址找到 Monitor 对象，设置 Owner 为 null，唤醒 EntryList 中 BLOCKED 线程
 
 > 线程0解锁时，要把对象头互换回来，发现锁对象的对象头不是原来的对象头，就会进入重量级锁的解锁流程。
-> 因为锁对象的对象头已经被替换成 Monitor 对象的对象地址，通过这个地址找到 Monitor 对象，将 Owner 设置为null，再把阻塞状态的线程给唤醒
-
+> 因为锁对象的对象头已经被替换成 Monitor 对象的对象地址，通过这个地址找到 Monitor 对象，将 Owner 设置为null，再把阻塞状态的线程给唤醒。
 
 
 ## 自旋优化
@@ -232,26 +283,10 @@ public static void m3() {
 
 ### 偏向状态
 
-回忆一下对象头格式
-
-```ruby
-|--------------------------------------------------------------------|--------------------|
-|                          Mark Word (64 bits)                       |       State        |
-|--------------------------------------------------------------------|--------------------|
-| unused:25  | hashcode:31  | unused:1  | age:4 | biased_lock:0 | 01 |     Normal         |
-|--------------------------------------------------------------------|--------------------|
-| thread:54  | epoch:2      | unused:1  | age:4 | biased_lock:1 | 01 |     Biased         |
-|--------------------------------------------------------------------|--------------------|
-|                      ptr_to_lock_record:62                    | 00 | Lightweight Locked |
-|--------------------------------------------------------------------|--------------------|
-|                  ptr_to_heavyweight_monitor:62                | 10 | Heavyweight Locked |
-|--------------------------------------------------------------------|--------------------|
-|                                                               | 11 |    Marked for GC   |
-|--------------------------------------------------------------------|--------------------|
-```
+ [Mark Word](###Mark%20Word)
+ ![](assets/Java原理synchronized/2g7P3YxX6o6l2l54G1e8HfWrmrm41swLhxDaa04kUbA.png)
 
 一个对象创建时：
-
 * 如果开启了偏向锁（默认开启），那么对象创建后，markword 值为 0x05 即最后 3 位为 101，这时它的thread、epoch、age 都为 0
 * 偏向锁是默认是延迟的，不会在程序启动时立即生效，如果想避免延迟，可以加 VM 参数 `-XX:BiasedLockingStartupDelay=0` 来禁用延迟
 * 如果没有开启偏向锁，那么对象创建后，markword 值为 0x01 即最后 3 位为 001，这时它的 hashcode、age 都为 0，第一次用到 hashcode 时才会赋值
@@ -264,7 +299,7 @@ public static void m3() {
 class Dog {}
 ```
 
-利用 jol 第三方工具来查看对象头信息（注意这里我扩展了 jol 让它输出更为简洁）
+利用 jol 第三方工具来查看对象头信息
 
 ```java
 // 添加虚拟机参数 -XX:BiasedLockingStartupDelay=0 
@@ -326,33 +361,25 @@ public static void main(String[] args) throws IOException {
 ```
 
 
-### 测试 hashCode
+## 偏向锁撤销
+### 调用对象hashCode
 
 正常状态对象一开始是没有 hashCode 的，第一次调用才生成。
 
-
-## 偏向锁撤销
-### 调用对象 hashCode
-
-调用了对象的 hashCode，但偏向锁的对象 MarkWord 中存储的是线程 id，如果调用 hashCode 会导致偏向锁被撤销
+调用了对象的 hashCode，但**偏向锁的对象 MarkWord 中存储的是线程 id，如果调用 hashCode 会导致偏向锁被撤销**。
 
 轻量级锁会在锁记录中记录 hashCode，重量级锁会在 Monitor 中记录 hashCode
-
 在调用 hashCode 后使用偏向锁，记得去掉 `-XX:-UseBiasedLocking`
 
 输出：
-
 ```java
 11:22:10.386 c.TestBiased [main] - 调用 hashCode:1778535015 
-
 11:22:10.391 c.TestBiased [t1] - synchronized 前
 // 最开始是偏向锁，因为调用了hashcode，变成了无锁状态
 00000000 00000000 00000000 01101010 00000010 01001010 01100111 00000001 
-
 11:22:10.393 c.TestBiased [t1] - synchronized 中
 // 轻量级锁
 00000000 00000000 00000000 00000000 00100000 11000011 11110011 01101000 
-
 11:22:10.393 c.TestBiased [t1] - synchronized 后
 // 无锁状态
 00000000 00000000 00000000 01101010 00000010 01001010 01100111 00000001
@@ -368,7 +395,7 @@ private static void test2() throws InterruptedException {
     Dog d = new Dog();
     Thread t1 = new Thread(() -> {
         synchronized (d) {
-            log.debug(ClassLayout.parseInstance(d).toPrintableSimple(true));
+         log.debug(ClassLayout.parseInstance(d).toPrintableSimple(true));
         }
 
         synchronized (TestBiased.class) {
@@ -458,7 +485,7 @@ public static void main(String[] args) throws InterruptedException {
 ```
 
 
-### 批量重偏向
+## 批量重偏向
 
 如果对象虽然被多个线程访问，但没有竞争，这时偏向了线程 T1 的对象仍有机会重新偏向 T2，重偏向会重置对象的 Thread ID
 
@@ -510,18 +537,9 @@ private static void test3() throws InterruptedException {
 ```java
 [t1] - 0 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
 [t1] - 1 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t1] - 2 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t1] - 3 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
 // 篇幅太长，省略...
-[t1] - 16 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t1] - 17 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t1] - 18 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-
+[t1] - 29 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101
 // t1的所有锁对象都是偏向锁，并且偏向t1线程
-
-[t1] - 19 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t1] - 20 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-// 篇幅太长，省略...
 [t2] - ===============> 
 
 // t2线程未使用锁时，还是偏向t1线程
@@ -530,44 +548,16 @@ private static void test3() throws InterruptedException {
 [t2] - 0 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
 // 使用后，变成无锁状态
 [t2] - 0 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-[t2] - 1 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 1 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 1 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-[t2] - 2 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 2 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 2 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-[t2] - 3 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 3 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 3 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-// 篇幅太长，省略...
-[t2] - 16 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 16 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 16 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-[t2] - 17 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 17 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 17 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
-[t2] - 18 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 18 00000000 00000000 00000000 00000000 00100000 01011000 11110111 00000000 
-[t2] - 18 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000001 
+// 下面都是一样的，篇幅太长，省略...
 // 执行了19次，执行第20次时，未使用锁对象时，还是偏向t1线程
 [t2] - 19 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
 // 使用锁对象时，直接偏向t2线程，并且把剩余锁对象批量重新偏向t2线程
 [t2] - 19 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
 [t2] - 19 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 20 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 20 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 20 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 21 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 21 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 21 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 22 00000000 00000000 00000000 00000000 00011111 11110011 11100000 00000101 
-[t2] - 22 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-[t2] - 22 00000000 00000000 00000000 00000000 00011111 11110011 11110001 00000101 
-// 篇幅太长，省略...
+// 下面都是一样的，篇幅太长，省略...
 ```
 
-
-### 批量撤销
+## 批量撤销
 
 当撤销偏向锁阈值超过 40 次后，jvm 会这样觉得，自己确实偏向错了，根本就不该偏向。于是整个类的所有对象都会变为不可偏向的，新建的对象也是不可偏向的
 
@@ -630,13 +620,9 @@ private static void test4() throws InterruptedException {
 
 
 参考资料：
-
 [https://github.com/farmerjohngit/myblog/issues/12](https://github.com/farmerjohngit/myblog/issues/12)
-
 [https://www.cnblogs.com/LemonFive/p/11246086.html](https://www.cnblogs.com/LemonFive/p/11246086.html)
-
 [https://www.cnblogs.com/LemonFive/p/11248248.html](https://www.cnblogs.com/LemonFive/p/11248248.html)
-
 偏向锁论文：[https://www.oracle.com/technetwork/java/biasedlocking-oopsla2006-wp-149958.pdf](https://www.oracle.com/technetwork/java/biasedlocking-oopsla2006-wp-149958.pdf)
 
 

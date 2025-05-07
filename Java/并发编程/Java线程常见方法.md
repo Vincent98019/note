@@ -32,7 +32,7 @@ tags:
 
 `void interrupt()`：打断线程|如果被打断线程正在 sleep，wait，join 会导致被打断的线程抛出 `InterruptedException`，并清除 打断标记；如果打断的正在运行的线程，则会设置 打断标记；park 的线程被打断，也会设置 打断标记
 `isInterrupted()`：判断是否被打断，不会清除打断标记
-`static void interrupted()`：判断当前线程是否被打断，会清除打断标记
+`static void interrupted()`：**判断当前线程是否被打断，会清除打断标记**
 
 `static void yield()`：线程的礼让，让出cpu，让其他线程执行，但礼让的时间不确定，所以也不一定礼让成功。
 
@@ -74,9 +74,9 @@ public static void main(String[] args) {
 ### sleep
 
 1. 调用 sleep 会让当前线程从 Running 进入 Timed Waiting 状态（阻塞）
-2. 其它线程可以使用 interrupt 方法打断正在睡眠的线程，这时 sleep 方法会抛出 InterruptedException
+2. 其它线程可以使用 `interrupt` 方法打断正在睡眠的线程，这时 sleep 方法会抛出 InterruptedException
 3. 睡眠结束后的线程未必会立刻得到执行
-4. 建议用 TimeUnit 的 sleep 代替 Thread 的 sleep 来获得更好的可读性
+4. 建议用 `TimeUnit` 的 sleep 代替 Thread 的 sleep 来获得更好的可读性
 
 ```java
 public static void main(String[] args) {
@@ -108,7 +108,20 @@ public static void main(String[] args) {
 ![](assets/Java线程常见方法/image-20240428182627670.png)
 
 
+在没有利用CPU计算时，不要使用`while(true)`空转浪费CPU，可以使用`yield`或`sleep`让出CPU的使用权给其他程序：
 
+```java
+while (true) {  
+    try {  
+        Thread.sleep(50);  
+    } catch (InterruptedException e) {  
+        throw new RuntimeException(e);  
+    }  
+}
+```
+
+- 使用`wait`或条件变量可以达到类似的效果，但是需要加锁，并需要对应的唤醒操作，一般适用于同步的场景
+- `sleep`适用于无需锁同步的场景
 ### yield
 
 1. 调用 yield 会让当前线程从 Running 进入 Runnable 就绪状态，然后调度执行其它线程
@@ -118,14 +131,14 @@ public static void main(String[] args) {
 
 ### 线程优先级
 
-线程优先级会提示（hint）调度器优先调度该线程，但它仅仅是一个提示，调度器可以忽略它。
+线程优先级会提示（hint）调度器优先调度该线程，但它**仅仅是一个提示，调度器可以忽略它。**
 
 如果 cpu 比较忙，那么优先级高的线程会获得更多的时间片，但 cpu 闲时，优先级几乎没作用。
 
 优先级常量：   `java.lang.thread`
-`MAX_PRIORITY`：线程的最高优先级10
-`MIN_PRIORITY`：线程的最低优先级1
-`NORM_PRIORITY`：线程的默认优先级5
+- `MAX_PRIORITY`：线程的最高优先级10
+- `MIN_PRIORITY`：线程的最低优先级1
+- `NORM_PRIORITY`：线程的默认优先级5
 
 ```java
 public static void main(String[] args) {
@@ -139,7 +152,7 @@ public static void main(String[] args) {
         int count = 0;
         for (;;) {
             // Thread.yield();
-            System.out.println("              ---->2 " + count++);
+            System.out.println("---->2 " + count++);
         }
     };
     Thread t1 = new Thread(task1, "t1");
@@ -150,13 +163,15 @@ public static void main(String[] args) {
     t2.start();
 }
 ```
+
 * 正常情况下，两个线程同时打印数字，到程序停止时，count的值应该差不多大
 * 在使用 `yield`  方法的情况下，线程2的count会比线程1的count小不少
 * 在设置线程优先级后(不使用 `yield` 方法)，线程1的优先级设置为最低，线程2的优先级设置为最高，程序停止时，线程2的count明显比线程1的count大很多
 
 
-
 ## join方法
+
+和`wait`方法底层一致
 
 ```java
 static int r = 0;
@@ -183,9 +198,6 @@ public static void main(String[] args) {
 ![](assets/Java线程常见方法/image-20240428182758866.png)
 
 
-
-
-
 使用join方法，加在t1.start()之后即可，在使用join方法之后，main线程将会等待t1线程运行完毕后继续执行：
 
 ![](assets/Java线程常见方法/image-20240428182819749.png)
@@ -196,6 +208,8 @@ public static void main(String[] args) {
 
 
 ### 有时效的join
+
+为优先执行调用join()方法的线程，等待该线程终止的最长时间millis毫秒 
 
 ```java
 static int r1 = 0;
@@ -229,11 +243,12 @@ public static void main(String[] args) throws InterruptedException {
 
 ## interrupt方法
 
-### 打断 sleep，wait，join 的线程
+### 打断阻塞的线程
 
-这几个方法都会让线程进入阻塞状态
+`sleep`，`wait`，`join`这几个方法都会让线程进入阻塞状态。
+打断 sleep 的线程，会清空打断状态，`isInterrupted`结果为`false`。
 
-打断 sleep 的线程, 会清空打断状态，以 sleep 为例
+以 sleep 为例：
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -260,7 +275,7 @@ public static void main(String[] args) throws InterruptedException {
 
 ### 打断正常运行的线程
 
-打断正常运行的线程，不会清空打断状态
+打断正常运行的线程，不会清空打断状态，可以根据打断状态来做一些操作：
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -312,11 +327,11 @@ public static void main(String[] args) throws InterruptedException {
 
 还有一些不推荐使用的方法，这些方法已过时，容易破坏同步代码块，造成线程死锁
 
-|方法名|功能说明|
-| ----- | ----- |
-|stop()|停止线程运行|
-|suspend()|挂起（暂停）线程运行|
-|resume()|恢复线程运行|
+| 方法名     | 功能说明       |
+| ------- | ---------- |
+| stop    | 停止线程运行     |
+| suspend | 挂起（暂停）线程运行 |
+| resume  | 恢复线程运行     |
 
 
 

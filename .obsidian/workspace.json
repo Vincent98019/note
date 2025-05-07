@@ -24,21 +24,49 @@
             }
           },
           {
-            "id": "376ca2311abde797",
+            "id": "123917dd8eb9b901",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "中间件/Elasticsearch/Elasticsearch自动补全.md",
-                "mode": "preview",
+                "file": "Java/并发编程/Java原理synchronized.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Elasticsearch自动补全"
+              "title": "Java原理synchronized"
+            }
+          },
+          {
+            "id": "ffcc7513251c649e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/并发编程/终止模式：两阶段终止模式.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "终止模式：两阶段终止模式"
+            }
+          },
+          {
+            "id": "98a2ebe79d0aa7c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sortspec.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "sortspec"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -159,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "中间件/Elasticsearch/Elasticsearch自动补全.md",
+                "file": "Java/并发编程/终止模式：两阶段终止模式.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Elasticsearch自动补全 的大纲"
+              "title": "终止模式：两阶段终止模式 的大纲"
             }
           },
           {
@@ -193,60 +221,60 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "random-note:开始漫游笔记": false,
-      "oz-clear-unused-images:Clear Unused Images": false,
-      "custom-sort:Toggle custom sorting": false,
-      "obsidian-git:Open Git source control": false,
       "obsidian-local-images-plus:Local Images Plus  0.16.3\r\nLocalize attachments (plugin folder)": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "custom-sort:Toggle custom sorting": false,
+      "webpage-html-export:Export Vault to HTML": false,
+      "obsidian-git:Open Git source control": false,
+      "oz-clear-unused-images:Clear Unused Images": false
     }
   },
   "active": "2ed8cc46d4f957f5",
   "lastOpenFiles": [
-    "中间件/Elasticsearch/Elasticsearch安装.md",
-    "中间件/Elasticsearch/Elasticsearch自动补全.md",
-    "中间件/Elasticsearch/Elasticsearch搜索结果.md",
-    "中间件/Elasticsearch/assets/Elasticsearch自动补全/file-20250414223341669.png",
-    "中间件/Elasticsearch/assets/Elasticsearch自动补全",
-    "中间件/Elasticsearch/Elasticsearch索引库操作.md",
-    "中间件/Elasticsearch/Elasticsearch搜索.md",
-    "未命名",
-    "中间件/Elasticsearch/ElasticsearchSSL证书配置.md",
-    "容器/Docker/Docker安装与启动.md",
-    "内网穿透与 FRP 配置指南.md",
-    "数据库/MySQL/MySQL存储过程.md",
-    "数据库/MySQL/MySQL存储引擎.md",
-    "Java/基础/Java安装—Linux.md",
-    "Java/并发编程/Java原理Monitor.md",
-    "操作系统/Linux/Linux权限管理.md",
-    "设计模式/创建者模式/单例模式.md",
-    "Java/并发编程/Java线程的生命周期.md",
-    "Java/并发编程/Java守护线程.md",
-    "Java/并发编程/Java关键字synchronized.md",
+    "Java/并发编程/Java内存模型.md",
+    "Java/并发编程/assets/Java内存模型/file-20250506203841760.png",
+    "Java/并发编程/assets/Java内存模型/file-20250506203815768.png",
+    "Java/并发编程/assets/Java内存模型/file-20250506203741223.png",
+    "Java/并发编程/assets/Java内存模型",
+    "Java/并发编程/JavaReentrantLock.md",
+    "Java/并发编程/Java锁的活跃性.md",
+    "Java/并发编程/同步模式：顺序控制.md",
+    "Java/并发编程/JavaLock锁.md",
     "Java/并发编程/Java原理synchronized.md",
-    "Java/并发编程/assets/Java原理synchronized/file-20250409211334997.png",
-    "Java/并发编程/assets/Java原理synchronized/file-20250409211321290.png",
+    "Java/并发编程/Java线程的生命周期.md",
+    "Java/并发编程/Java关键字synchronized.md",
+    "Java/并发编程/Java原理park&unpark.md",
     "sortspec.md",
-    "Java/并发编程/assets/Java原理synchronized",
-    "Java/并发编程/assets/Java关键字synchronized",
-    "Java/并发编程/assets/Java关键字synchronized原理",
-    "Java/并发编程/assets/Java关键字synchronized使用",
-    "Java/并发编程/assets/MySQL基本查询 DQL",
-    "Java/并发编程/assets/synchronized原理",
-    "Java/并发编程/Java 线程安全、线程同步、互斥锁、Lock锁、死锁、线程间通信.md",
-    "Java/IO流/Java类File.md",
-    "操作系统/Linux/Linux常用命令.md",
-    "XML.md",
-    "HTTP.md",
-    "进制转换.md",
-    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250406151714653.png",
-    "中间件/Elasticsearch/assets/MySQL基本查询 DQL",
-    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250406151440890.png",
-    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250404224444885.png",
-    "中间件/Elasticsearch/assets/Elasticsearch搜索/file-20250404224315396.png",
-    "中间件/Elasticsearch/assets/Elasticsearch文档操作/fd5992ced8d662b31a7657bd2dc378c8_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch文档操作/e6f9505122c6a38fa97242f2ab170dff_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch文档操作/b88f8571dfddb4b82b100b57f2f9d676_MD5.png",
-    "中间件/Elasticsearch/assets/Elasticsearch搜索",
+    "Java/并发编程/assets/Java锁的活跃性/file-20250504233749100.png",
+    "Java/并发编程/assets/Java锁的活跃性/file-20250504233548114.png",
+    "Java/并发编程/异步模式：生产者&消费者.md",
+    "Java/并发编程/assets/Java锁的活跃性",
+    "Java/并发编程/assets/JavaLock锁",
+    "Java/并发编程/assets/Java锁的活跃性/file-20250504232023238.png",
+    "Java/并发编程/assets/Java锁的活跃性/file-20250504231835620.png",
+    "Java/并发编程/assets/Java锁的活跃性/file-20250504231736700.png",
+    "Java/并发编程/assets/Java锁活跃性",
+    "Java/并发编程/Java原理wait&notify&join.md",
+    "Java/并发编程/Java守护线程.md",
+    "Java/并发编程/终止模式：两阶段终止模式.md",
+    "Java/并发编程/Java线程常见方法.md",
+    "Java/并发编程/Java进程与线程.md",
+    "Java/并发编程/Java创建线程.md",
+    "Java/并发编程/assets/Java原理park&unpark/file-20250504211252230.png",
+    "Java/并发编程/assets/Java原理park&unpark/file-20250504210929304.png",
+    "Java/并发编程/assets/Java原理park&unpark",
+    "Java/并发编程/assets/异步模式：生产者&消费者",
+    "Java/并发编程/同步模式：保护性暂停.md",
+    "Java/并发编程/assets/同步模式：保护性暂停",
+    "Java/JVM/JVM字节码指令.md",
+    "Redis/Redis数据类型.md",
+    "Redis/Redis配置文件.md",
+    "Redis/Redis集群.md",
+    "Redis/Redis概述&安装.md",
+    "Spring/SpringCloud/SpringCloudConsul.md",
+    "Java/并发编程/assets/终止模式：两阶段终止模式",
+    "Java/面向对象/Java权限修饰符.md",
+    "Java/assets/HTTP",
+    "Java/集合/assets/JavaProperties",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
