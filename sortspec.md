@@ -251,15 +251,14 @@ sorting-spec: |-
   SpringSecurity用户认证
 
   ------------------------------------------------------------------
-  target-folder: 数据库
+  target-folder: MyBatis
   assets
   ---
-  关系型数据库 & 非关系型数据库
-  范式
-  MySQL
-  Oracle
+  MyBatis概述&入门
+  MyBatisCRUD操作
+  MyBatis配置文件
   
-  ----------------------------------
+  ------------------------------------------------------------------
   target-folder: MySQL
   assets
   MySQL安装—CentOS

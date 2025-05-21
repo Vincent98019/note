@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ffc18cd-64a4-4abc-a5c8-6551f2b3e85b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.obsidian/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/appearance.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/appearance.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/bookmarks.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/bookmarks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/community-plugins.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/community-plugins.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/workspace.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Linux/VMware/assets/VMware虚拟机克隆/Pasted image 20240511105910.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Linux/VMware/assets/VMware虚拟机快照/image-20240511141442254.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据结构与算法/assets/冒泡排序/image-20240429155146790.png" beforeDir="false" />
-    </list>
+    <list default="true" id="0ffc18cd-64a4-4abc-a5c8-6551f2b3e85b" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,9 +22,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2gWwoEOrZEBNOpWE7n66noDpgfZ" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -43,24 +34,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/work/qinglanhong/parkzhiwu",
+    "last_opened_file_path": "/Users/hwl/Library/Mobile Documents/iCloud~md~obsidian/Documents/note",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pathVariables",
+    "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -74,6 +68,7 @@
       <updated>1713436201675</updated>
       <workItem from="1713436202724" duration="45000" />
       <workItem from="1715826814824" duration="1347000" />
+      <workItem from="1746584381198" duration="877000" />
     </task>
     <servers />
   </component>

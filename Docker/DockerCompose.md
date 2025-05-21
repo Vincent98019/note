@@ -139,7 +139,7 @@ services:
 执行命令
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 
