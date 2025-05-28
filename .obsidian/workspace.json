@@ -106,8 +106,23 @@
               "icon": "lucide-file",
               "title": "MyBatis配置文件"
             }
+          },
+          {
+            "id": "8838c1dc26bef922",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Java/并发编程/Java线程常见方法.md",
+                "bFile": "Java/并发编程/Java线程常见方法.md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: Java线程常见方法"
+            }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -228,13 +243,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sortspec.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "sortspec 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -269,8 +283,23 @@
       "oz-clear-unused-images:Clear Unused Images": false
     }
   },
-  "active": "2ed8cc46d4f957f5",
+  "active": "8838c1dc26bef922",
   "lastOpenFiles": [
+    "MyBatis/assets/MyBatis连接池/file-20250525204255750.png",
+    "MyBatis/assets/MyBatis连接池/file-20250525202311249.png",
+    "MyBatis/assets/MyBatis连接池/file-20250525202244308.png",
+    "MyBatis/assets/MyBatis连接池/file-20250525201418197.png",
+    "Java/并发编程/终止模式：两阶段终止模式.md",
+    "Java/并发编程/Java线程常见方法.md",
+    "Java/并发编程/Java线程的生命周期.md",
+    "Java/并发编程/Java创建线程.md",
+    "Java/并发编程/Java守护线程.md",
+    "Java/并发编程/同步模式：顺序控制.md",
+    "Java/并发编程/Java内存模型.md",
+    "Java/并发编程/JavaLock锁.md",
+    "Java/并发编程/Java进程与线程.md",
+    "MyBatis/MyBatis连接池.md",
+    "MyBatis/assets/MyBatis连接池",
     "MyBatis/MyBatis配置文件.md",
     "sortspec.md",
     "MyBatis/MyBatisCRUD操作.md",
@@ -294,29 +323,13 @@
     "Redis/Redis概述&安装.md",
     "Spring/SpringCloud/SpringCloudConsul.md",
     "Spring/SpringCloud/SpringCloud概述.md",
-    "Spring/SpringBoot/SpringBoot 下载网络文件、图片.md",
-    "Spring/SpringBoot/SpringBoot国际化.md",
-    "Java/Java Redis-Jedis.md",
-    "Java/JDBC.md",
-    "Java/错误集锦/编码GBK的不可映射字符.md",
-    "Java/JVM/JVM运行期优化.md",
-    "Java/面向对象/Java代码块.md",
-    "Docker/DockerCompose.md",
     "Docker/assets/MySQL基本查询 DQL",
-    "Java/并发编程/终止模式：两阶段终止模式.md",
-    "Java/并发编程/Java内存模型.md",
     "Java/并发编程/assets/Java内存模型/file-20250506203841760.png",
-    "Java/并发编程/assets/Java内存模型/file-20250506203815768.png",
-    "Java/并发编程/assets/Java内存模型/file-20250506203741223.png",
     "Java/并发编程/assets/Java内存模型",
-    "Java/并发编程/JavaReentrantLock.md",
-    "Java/并发编程/assets/Java锁的活跃性/file-20250504233749100.png",
-    "Java/并发编程/assets/Java锁的活跃性/file-20250504233548114.png",
     "Java/并发编程/assets/Java锁的活跃性",
     "Java/并发编程/assets/JavaLock锁",
     "Java/并发编程/assets/Java锁活跃性",
     "Java/并发编程/assets/Java原理park&unpark",
-    "Java/并发编程/assets/异步模式：生产者&消费者",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

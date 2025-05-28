@@ -20,7 +20,7 @@ tags:
 `String getName()`：获取当前线程名称
 `void setName(String)`：修改线程名
 
-`void start()`：启动线程，Java虚拟机调用此线程的run方法，一个线程对象同时只能启动一，start 方法只是让线程进入就绪，里面代码不一定立刻运行（CPU 的时间片还没分给它）。每个线程对象的start方法只能调用一次，如果调用了多次会出现 `IllegalThreadStateException` 
+`void start()`：启动线程，Java虚拟机调用此线程的run方法，一个线程对象同时只能启动一次，start 方法只是让线程进入就绪，里面代码不一定立刻运行（CPU 的时间片还没分给它）。每个线程对象的start方法只能调用一次，如果调用了多次会出现 `IllegalThreadStateException` 
 
 `void run()`：新线程启动后会调用的方法，如果在构造 Thread 对象时传递了 Runnable 参数，则线程启动后会调用 Runnable 中的 run 方法，否则默认不执行任何操作。但可以创建 Thread 的子类对象，来覆盖默认行为
 
