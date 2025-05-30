@@ -29,100 +29,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/并发编程/Java原理synchronized.md",
+                "file": "MyBatis/MyBatis事务.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Java原理synchronized"
-            }
-          },
-          {
-            "id": "ffcc7513251c649e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyBatis/MyBatis配置文件.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MyBatis配置文件"
-            }
-          },
-          {
-            "id": "98a2ebe79d0aa7c3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sortspec.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "sortspec"
-            }
-          },
-          {
-            "id": "047a473178664a4f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyBatis/MyBatis概述&入门.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MyBatis概述&入门"
-            }
-          },
-          {
-            "id": "c1cd7d17c05dcb5c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyBatis/MyBatisCRUD操作.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MyBatisCRUD操作"
-            }
-          },
-          {
-            "id": "5e27683c20b98d83",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyBatis/MyBatis配置文件.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "MyBatis配置文件"
-            }
-          },
-          {
-            "id": "8838c1dc26bef922",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "Java/并发编程/Java线程常见方法.md",
-                "bFile": "Java/并发编程/Java线程常见方法.md",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: Java线程常见方法"
+              "title": "MyBatis事务"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -243,12 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "sortspec.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "sortspec 的大纲"
             }
           },
           {
@@ -283,12 +199,27 @@
       "oz-clear-unused-images:Clear Unused Images": false
     }
   },
-  "active": "8838c1dc26bef922",
+  "active": "cba37ddea48b126d",
   "lastOpenFiles": [
+    "MyBatis/MyBatis事务.md",
+    "MyBatis/assets/MyBatis事务/file-20250530110157177.png",
+    "MyBatis/assets/MyBatis事务/file-20250530110142755.png",
+    "MyBatis/assets/MyBatis事务/file-20250530110132341.png",
+    "MyBatis/assets/MyBatis事务/file-20250530105938328.png",
+    "MyBatis/assets/MyBatis事务/file-20250530105846333.png",
+    "MyBatis/assets/MyBatis事务",
+    "MyBatis/MyBatis连接池.md",
+    "MyBatis/assets/MyBatis连接池/file-20250529102402804.png",
+    "MyBatis/assets/MyBatis连接池/file-20250529102341135.png",
+    "Java/并发编程/JavaLock锁.md",
+    "Java/并发编程/Java原理synchronized.md",
+    "MyBatis/MyBatis配置文件.md",
+    "sortspec.md",
+    "MyBatis/MyBatis概述&入门.md",
+    "MyBatis/MyBatisCRUD操作.md",
     "MyBatis/assets/MyBatis连接池/file-20250525204255750.png",
     "MyBatis/assets/MyBatis连接池/file-20250525202311249.png",
     "MyBatis/assets/MyBatis连接池/file-20250525202244308.png",
-    "MyBatis/assets/MyBatis连接池/file-20250525201418197.png",
     "Java/并发编程/终止模式：两阶段终止模式.md",
     "Java/并发编程/Java线程常见方法.md",
     "Java/并发编程/Java线程的生命周期.md",
@@ -296,21 +227,10 @@
     "Java/并发编程/Java守护线程.md",
     "Java/并发编程/同步模式：顺序控制.md",
     "Java/并发编程/Java内存模型.md",
-    "Java/并发编程/JavaLock锁.md",
     "Java/并发编程/Java进程与线程.md",
-    "MyBatis/MyBatis连接池.md",
     "MyBatis/assets/MyBatis连接池",
-    "MyBatis/MyBatis配置文件.md",
-    "sortspec.md",
-    "MyBatis/MyBatisCRUD操作.md",
-    "MyBatis/MyBatis概述&入门.md",
     "MyBatis/未命名",
-    "MyBatis/assets/MyBatisCRUD操作/file-20250520213914327.png",
-    "MyBatis/assets/MyBatisCRUD操作/file-20250519151640678.png",
-    "MyBatis/assets/MyBatisCRUD操作/file-20250519112658188.png",
-    "MyBatis/assets/MyBatisCRUD操作/file-20250519112349762.png",
     "MyBatis/assets/MyBatisCRUD操作",
-    "MyBatis/assets/MySQL基本查询 DQL/292214145f791b7e15bb480d63a9188a_MD5.jpg",
     "MyBatis/assets/MySQL基本查询 DQL",
     "MySQL/MySQL操作数据 DML.md",
     "Java/基础/Java运算符.md",
@@ -321,15 +241,11 @@
     "Redis/Redis事务.md",
     "Redis/Redis配置文件.md",
     "Redis/Redis概述&安装.md",
-    "Spring/SpringCloud/SpringCloudConsul.md",
-    "Spring/SpringCloud/SpringCloud概述.md",
     "Docker/assets/MySQL基本查询 DQL",
-    "Java/并发编程/assets/Java内存模型/file-20250506203841760.png",
     "Java/并发编程/assets/Java内存模型",
     "Java/并发编程/assets/Java锁的活跃性",
     "Java/并发编程/assets/JavaLock锁",
     "Java/并发编程/assets/Java锁活跃性",
-    "Java/并发编程/assets/Java原理park&unpark",
     "未命名 3.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",

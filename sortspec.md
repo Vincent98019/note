@@ -257,6 +257,8 @@ sorting-spec: |-
   MyBatis概述&入门
   MyBatisCRUD操作
   MyBatis配置文件
+  MyBatis连接池
+  MyBatis 事务
   
   ------------------------------------------------------------------
   target-folder: MySQL

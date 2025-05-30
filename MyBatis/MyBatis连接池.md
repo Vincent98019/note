@@ -84,3 +84,15 @@ public void testSql() throws Exception {
 证明它的加载过程可以通过断点调试，在 PooledDataSource 中找到如下 popConnection()方法，如下所示：
 
 ![](assets/MyBatis连接池/file-20250525204255750.png)
+
+
+ 分析源代码，得出 PooledDataSource 工作原理如下：
+ 
+![](assets/MyBatis连接池/file-20250529102341135.png)
+
+
+下面是连接获取的源代码：
+
+![](assets/MyBatis连接池/file-20250529102402804.png)
+
+可以发现，真正连接打开的时间点，只是在执行SQL语句时，才会进行。数据库连接是最为宝贵的资源，只有在要用到的时候，才去获取并打开连接，当用完了就再立即将数据库连接归还到连接池中。
